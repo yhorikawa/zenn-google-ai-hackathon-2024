@@ -15,7 +15,7 @@ FROM bun AS pruned
 ARG YARN_PKG_MANAGER
 COPY . .
 RUN bunx json -I -f package.json -e ${YARN_PKG_MANAGER}
-RUN bunx turbo prune web --docker
+RUN bunx turbo prune server --docker
 
 # =============== INSTALL & BUILD =================
 
@@ -24,24 +24,19 @@ ARG BUN_PKG_MANAGER
 COPY --from=pruned /app/out/full/ .
 RUN bunx json -I -f package.json -e ${BUN_PKG_MANAGER}
 RUN bun install --frozen-lockfile
-RUN bun turbo build --filter="web"
 
 # ================== RELEASE ======================
 
 FROM bun-alpine AS runner
 ENV NODE_ENV=production
 
-COPY --from=builder /app/apps/web/next.config.js ./
-COPY --from=builder /app/apps/web/package.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/apps/server/src/ ./src
 
-COPY --from=builder /app/apps/web/.next/standalone ./
-COPY --from=builder /app/apps/web/.next/static ./apps/web/.next/static
-COPY --from=builder /app/apps/web/public ./apps/web/public
-
-EXPOSE 3001
+EXPOSE 3000
 
 USER bun
-ENV PORT=3001
+ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["bun", "run", "apps/web/server.js"]
+CMD ["bun", "run", "src/index.ts"]
