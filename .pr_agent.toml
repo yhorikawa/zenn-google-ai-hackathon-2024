@@ -1,0 +1,43 @@
+[ignore]
+glob = ['*.lock','*.toml']
+
+[config]
+model = "vertex_ai/gemini-1.5-flash"
+model_turbo = "vertex_ai/gemini-1.5-flash"
+fallback_models="vertex_ai/gemini-1.5-flash"
+
+[pr_reviewer] # /review #
+require_tests_review = true
+require_can_be_split_review = true
+num_code_suggestions = 0
+inline_code_comments = false
+enable_auto_approval = false
+maximal_review_effort = 5
+extra_instructions = "Please use Japanese for everything."
+
+[pr_description] # /describe #
+generate_ai_title = true
+final_update_message = true
+extra_instructions = "Please use Japanese for everything."
+
+[pr_questions]
+enable_help_text = true
+
+[pr_code_suggestions] # /improve #
+num_code_suggestions = 0
+rank_suggestions = false
+commitable_code_suggestions = false
+demand_code_suggestions_self_review = false
+extra_instructions = "Please use Japanese for everything."
+
+[pr_add_docs] # /add_docs #
+extra_instructions = "Please use Japanese for everything."
+
+[pr_update_changelog] # /update_changelog #
+extra_instructions = "Please use Japanese for everything."
+
+[pr_test] # /test #
+extra_instructions = "Please use Japanese for everything."
+
+[pr_improve_component] # /improve_component #
+extra_instructions = "Please use Japanese for everything."
