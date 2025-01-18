@@ -3,12 +3,14 @@
   "types": "./src/index.ts",
   "main": "./src/index.ts",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "test": "vitest run"
   },
   "dependencies": {
     "hono": "^4.6.16"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "vitest": "^3.0.2"
   }
 }
