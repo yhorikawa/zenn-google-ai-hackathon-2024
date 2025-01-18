@@ -1,17 +1,15 @@
-/** @type {import('next').NextConfig} */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import type { NextConfig } from "next/types";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   transpilePackages: [],
   output: "standalone",
-  experimental: {
-    outputFileTracingRoot: path.join(__dirname, "../../"),
-  },
+  outputFileTracingRoot: path.join(__dirname, "../../"),
 };
 
 export default nextConfig;

@@ -31,7 +31,7 @@ RUN bun turbo build --filter="web"
 FROM bun-alpine AS runner
 ENV NODE_ENV=production
 
-COPY --from=builder /app/apps/web/next.config.js ./
+COPY --from=builder /app/apps/web/next.config.ts ./
 COPY --from=builder /app/apps/web/package.json ./
 
 COPY --from=builder /app/apps/web/.next/standalone ./
