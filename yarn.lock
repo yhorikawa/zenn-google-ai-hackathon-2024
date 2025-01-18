@@ -8,6 +8,13 @@
   resolved "https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
+"@asteasolutions/zod-to-openapi@^7.1.0":
+  version "7.3.0"
+  resolved "https://registry.npmjs.org/@asteasolutions/zod-to-openapi/-/zod-to-openapi-7.3.0.tgz"
+  integrity sha512-7tE/r1gXwMIvGnXVUdIqUhCU1RevEFC4Jk6Bussa0fk1ecbnnINkZzj1EOAJyE/M3AI25DnHT/zKQL1/FPFi8Q==
+  dependencies:
+    openapi3-ts "^4.1.2"
+
 "@biomejs/biome@^1.9.4":
   version "1.9.4"
   resolved "https://registry.npmjs.org/@biomejs/biome/-/biome-1.9.4.tgz"
@@ -229,6 +236,24 @@
   version "0.2.9"
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.9.tgz"
   integrity sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==
+
+"@hono/swagger-ui@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@hono/swagger-ui/-/swagger-ui-0.5.0.tgz"
+  integrity sha512-MWYYSv9kC8IwFBLZdwgZZMT9zUq2C/4/ekuyEYOkHEgUMqu+FG3eebtBZ4ofMh60xYRxRR2BgQGoNIILys/PFg==
+
+"@hono/zod-openapi@^0.18.3":
+  version "0.18.3"
+  resolved "https://registry.npmjs.org/@hono/zod-openapi/-/zod-openapi-0.18.3.tgz"
+  integrity sha512-bNlRDODnp7P9Fs13ZPajEOt13G0XwXKfKRHMEFCphQsFiD1Y+twzHaglpNAhNcflzR1DQwHY92ZS06b4LTPbIQ==
+  dependencies:
+    "@asteasolutions/zod-to-openapi" "^7.1.0"
+    "@hono/zod-validator" "^0.4.1"
+
+"@hono/zod-validator@^0.4.1":
+  version "0.4.2"
+  resolved "https://registry.npmjs.org/@hono/zod-validator/-/zod-validator-0.4.2.tgz"
+  integrity sha512-1rrlBg+EpDPhzOV4hT9pxr5+xDVmKuz6YJl+la7VCwK6ass5ldyKm5fD+umJdV2zhHD6jROoCCv8NbTwyfhT0g==
 
 "@img/sharp-darwin-arm64@0.33.5":
   version "0.33.5"
@@ -1237,7 +1262,7 @@ hasown@^2.0.2:
   dependencies:
     function-bind "^1.1.2"
 
-hono@^4.6.16:
+hono@*, hono@>=3.9.0, hono@>=4.3.6, hono@^4.6.16:
   version "4.6.17"
   resolved "https://registry.npmjs.org/hono/-/hono-4.6.17.tgz"
   integrity sha512-Kbh4M0so2RzLiIg6iP33DoTU68TdvP2O/kb1Hhhdwa37fazuf402ig8ZRfjkz2dqXwiWl2dAgh0f++TuKAdOtQ==
@@ -1533,6 +1558,13 @@ onetime@^7.0.0:
   dependencies:
     mimic-function "^5.0.0"
 
+openapi3-ts@^4.1.2:
+  version "4.4.0"
+  resolved "https://registry.npmjs.org/openapi3-ts/-/openapi3-ts-4.4.0.tgz"
+  integrity sha512-9asTNB9IkKEzWMcHmVZE7Ts3kC9G7AFHfs8i7caD8HbI76gEjdkId4z/AkP83xdZsH7PLAnnbl47qZkXuxpArw==
+  dependencies:
+    yaml "^2.5.0"
+
 package-json-from-dist@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/package-json-from-dist/-/package-json-from-dist-1.0.1.tgz"
@@ -1783,7 +1815,10 @@ server@*, "server@apps/server":
     "@types/bun" "latest"
     vitest "^3.0.2"
   dependencies:
+    "@hono/swagger-ui" "^0.5.0"
+    "@hono/zod-openapi" "^0.18.3"
     hono "^4.6.16"
+    zod "^3.24.1"
 
 sharp@^0.33.5:
   version "0.33.5"
@@ -2226,7 +2261,12 @@ wrap-ansi@^9.0.0:
     string-width "^7.0.0"
     strip-ansi "^7.1.0"
 
-yaml@^2.3.4, yaml@^2.4.2, yaml@~2.6.1:
+yaml@^2.3.4, yaml@^2.4.2, yaml@^2.5.0, yaml@~2.6.1:
   version "2.6.1"
   resolved "https://registry.npmjs.org/yaml/-/yaml-2.6.1.tgz"
   integrity sha512-7r0XPzioN/Q9kXBro/XPnA6kznR73DHq+GXh5ON7ZozRO6aMjbmiBuKste2wslTFkC5d1dw0GooOCepZXJ2SAg==
+
+zod@3.*, zod@^3.19.1, zod@^3.20.2, zod@^3.24.1:
+  version "3.24.1"
+  resolved "https://registry.npmjs.org/zod/-/zod-3.24.1.tgz"
+  integrity sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==

@@ -1,6 +1,8 @@
-import { Hono } from "hono";
+import { OpenAPIHono } from "@hono/zod-openapi";
+import { exampleHandler, exampleRoute } from "./zodExample";
 
-export const exampleRoute = new Hono()
+export const exampleApi = new OpenAPIHono()
+  .openapi(exampleRoute, exampleHandler)
   .get("/hello-world", (c) => {
     return c.text("Hello World!");
   })
