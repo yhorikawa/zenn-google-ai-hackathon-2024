@@ -3,7 +3,9 @@ import { Button } from "flowbite-react";
 import { SITE_TITLE } from "../constants/site";
 
 const Page = async () => {
-  const res = await client().index.$get();
+  const res = await client().example["hello-world"][":name"].$get({
+    param: { name: "Hono" },
+  });
   const data = await res.text();
 
   return (
