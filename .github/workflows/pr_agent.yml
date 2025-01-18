@@ -1,0 +1,39 @@
+name: CodiumAI PR-Agent
+run-name: CodiumAI PR-Agent [${{github.event.number}}]
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pr_agent_job:
+    if: ${{ github.event.sender.type != 'Bot' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      id-token: write
+      issues: write
+      pull-requests: write
+      contents: write
+    name: Run pr agent on every pull request, respond to user comments
+    steps:
+      - uses: actions/checkout@v4
+      - name: Auth to Google Cloud by OpenID Connect
+        uses: google-github-actions/auth@v2.1.6
+        with:
+          project_id: ${{ secrets.GOOGLE_CLOUD_PROJECT_ID }}
+          workload_identity_provider: ${{ secrets.GOOGLE_CLOUD_PR_AGENT_WORKLOAD_IDENTITY_PROVIDER }}
+          access_token_lifetime: 300s
+      - name: Run PR-Agent
+        id: pr-agent
+        uses: Codium-ai/pr-agent@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_action_config.auto_review: "true"
+          github_action_config.auto_describe: "true"
+          github_action_config.auto_improve: "true"
