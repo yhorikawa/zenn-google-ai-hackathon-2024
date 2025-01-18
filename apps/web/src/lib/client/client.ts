@@ -4,7 +4,7 @@ import { BACKEND_URL, isBuildMode } from "../../constants/env";
 
 const cache = (cache: RequestInit["cache"]) => {
   if (!isBuildMode) return "no-store";
-  return cache ? cache : "force-cache";
+  return cache ? cache : "no-store";
 };
 
 export const client = (init?: RequestInit) =>
