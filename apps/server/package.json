@@ -3,7 +3,7 @@
   "types": "./src/index.ts",
   "main": "./src/index.ts",
   "scripts": {
-    "dev": "bun run --hot src/index.ts",
+    "dev": "bun run --hot --port=3000 src/index.ts",
     "test": "vitest run"
   },
   "dependencies": {
