@@ -21,6 +21,7 @@ RUN bunx turbo prune web --docker
 
 FROM bun AS builder
 ARG BUN_PKG_MANAGER
+ARG BACKEND_URL
 COPY --from=pruned /app/out/full/ .
 RUN bunx json -I -f package.json -e ${BUN_PKG_MANAGER}
 RUN bun install --frozen-lockfile
@@ -42,6 +43,8 @@ EXPOSE 3001
 
 USER bun
 ENV PORT=3001
+ARG BACKEND_URL
+ENV BACKEND_URL ${BACKEND_URL}
 ENV HOSTNAME="0.0.0.0"
 
 CMD ["bun", "run", "apps/web/server.js"]
