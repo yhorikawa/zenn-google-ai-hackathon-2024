@@ -1,5 +1,7 @@
 {
   "name": "server",
+  "types": "./src/index.ts",
+  "main": "./src/index.ts",
   "scripts": {
     "dev": "bun run --hot src/index.ts"
   },

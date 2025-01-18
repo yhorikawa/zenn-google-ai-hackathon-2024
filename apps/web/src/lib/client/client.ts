@@ -1,5 +1,5 @@
 import { hc } from "hono/client";
-import type { AppType } from "../../../../server/src/index";
+import type { AppType } from "server";
 import { BACKEND_URL, isBuildMode } from "../../constants/env";
 
 const cache = (cache: RequestInit["cache"]) => {

@@ -1370,7 +1370,7 @@ semver@^7.6.3:
   resolved "https://registry.npmjs.org/semver/-/semver-7.6.3.tgz"
   integrity sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==
 
-"server@apps/server":
+server@*, "server@apps/server":
   version "workspace:apps/server"
   resolved "workspace:apps/server"
   devDependencies:
@@ -1680,7 +1680,7 @@ util-deprecate@^1.0.2:
     "@types/bun" "latest"
     "@types/react" "18.3.1"
     "@types/react-dom" "18.3.0"
-    server "apps/server"
+    server "*"
     typescript "5.5.4"
   dependencies:
     autoprefixer "^10.4.20"
