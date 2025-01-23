@@ -633,6 +633,13 @@
   dependencies:
     bun-types "1.1.44"
 
+"@types/bun@latest":
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/@types/bun/-/bun-1.2.0.tgz"
+  integrity sha512-5N1JqdahfpBlAv4wy6svEYcd/YfO2GNrbL95JOmFx8nkE6dbK4R0oSE5SpBA4vBRqgrOUAXF8Dpiz+gi7r80SA==
+  dependencies:
+    bun-types "1.2.0"
+
 "@types/estree@1.0.6", "@types/estree@^1.0.0":
   version "1.0.6"
   resolved "https://registry.npmjs.org/@types/estree/-/estree-1.0.6.tgz"
@@ -840,6 +847,14 @@ bun-types@1.1.44:
   integrity sha512-jtcekoZeSINgEcHSISzhR13w/cyE+Fankw2Cpl4c0fN3lRmKVAX0i9ay4FyK4lOxUK1HG4HkuIlrPvXKz4Y7sw==
   dependencies:
     "@types/node" "~20.12.8"
+    "@types/ws" "~8.5.10"
+
+bun-types@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/bun-types/-/bun-types-1.2.0.tgz"
+  integrity sha512-KEaJxyZfbV/c4eyG0vyehDpYmBGreNiQbZIqvVHJwZ4BmeuWlNZ7EAzMN2Zcd7ailmS/tGVW0BgYbGf+lGEpWw==
+  dependencies:
+    "@types/node" "*"
     "@types/ws" "~8.5.10"
 
 busboy@1.6.0:
@@ -1803,6 +1818,13 @@ scheduler@^0.25.0:
   resolved "https://registry.npmjs.org/scheduler/-/scheduler-0.25.0.tgz"
   integrity sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA==
 
+"scripts@apps/scripts":
+  version "workspace:apps/scripts"
+  resolved "workspace:apps/scripts"
+  devDependencies:
+    "@repo/typescript-config" "packages/typescript-config"
+    "@types/bun" "latest"
+
 semver@^7.6.3:
   version "7.6.3"
   resolved "https://registry.npmjs.org/semver/-/semver-7.6.3.tgz"
@@ -2126,7 +2148,7 @@ turbo-windows-arm64@2.3.3:
   resolved "https://registry.npmjs.org/turbo-windows-arm64/-/turbo-windows-arm64-2.3.3.tgz"
   integrity sha512-dW4ZK1r6XLPNYLIKjC4o87HxYidtRRcBeo/hZ9Wng2XM/MqqYkAyzJXJGgRMsc0MMEN9z4+ZIfnSNBrA0b08ag==
 
-typescript@5.5.4:
+typescript@5.5.4, typescript@^5.0.0:
   version "5.5.4"
   resolved "https://registry.npmjs.org/typescript/-/typescript-5.5.4.tgz"
   integrity sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==
