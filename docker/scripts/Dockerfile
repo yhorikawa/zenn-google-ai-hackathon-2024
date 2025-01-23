@@ -31,7 +31,7 @@ FROM bun-alpine AS runner
 ENV NODE_ENV=production
 
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/apps/server/src/ ./src
+COPY --from=builder /app/apps/scripts/src/ ./src
 
 USER bun
 CMD ["bun", "run", "src/index.ts"]
