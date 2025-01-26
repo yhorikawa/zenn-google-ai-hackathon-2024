@@ -3,28 +3,34 @@
 {
 	"name": "Debian",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"dockerComposeFile": "compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		"ghcr.io/audacioustux/devcontainers/bun": 1
+		"ghcr.io/audacioustux/devcontainers/bun:1": {},
+		"ghcr.io/devcontainers-extra/features/prisma:2": {},
 	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"biomejs.biome",
 				"bradlc.vscode-tailwindcss",
+        "mongodb.mongodb-vscode",
 				"EditorConfig.EditorConfig"
 			]
 		}
 	},
-	"postCreateCommand": "bun install"
+	"postCreateCommand": "bun install",
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+	"forwardPorts": [
+    // mongodb
+    27917,
+    // mongo_express
+    8081,
+    // server
+    3000,
+    // web(next.js)
+    3001
+  ]
 }

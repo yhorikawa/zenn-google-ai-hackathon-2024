@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "biomejs.biome",
+    "mongodb.mongodb-vscode",
     "bradlc.vscode-tailwindcss"
   ]
 }
