@@ -9,5 +9,9 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@google-cloud/vertexai": "^1.9.2",
+    "@google/generative-ai": "^0.21.0"
   }
 }
