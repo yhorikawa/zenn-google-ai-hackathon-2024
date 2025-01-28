@@ -1,0 +1,23 @@
+{
+  "name": "@repo/database",
+  "module": "index.ts",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:format": "prisma format",
+    "db:push": "prisma db push"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prisma": "^6.2.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "6.2.1"
+  }
+}
