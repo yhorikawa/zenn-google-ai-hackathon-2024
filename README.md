@@ -4,7 +4,15 @@
 
 ```bash
 bun install
+
+bun turbo db:generate
 ```
+
+
+- 注意
+  - .env.exampleをコピーしてください
+    - prismaでは`DATABASE_URL'を使います
+    - prismaをimportしているところでは全て必要です
 
 ## Swagger UI
 - http://localhost:3000/doc/swagger-ui
