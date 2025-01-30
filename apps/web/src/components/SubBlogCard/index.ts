@@ -1,1 +1,1 @@
-export * from "./SubBlogCard";
+export { SubBlogCard } from "./SubBlogCard";
