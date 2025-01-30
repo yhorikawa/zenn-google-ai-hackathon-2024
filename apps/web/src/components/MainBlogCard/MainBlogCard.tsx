@@ -5,25 +5,28 @@ type BlogCardProps = {
   date: string;
 };
 
-const MainBlogCard: React.FC<BlogCardProps> = ({
-  href,
-  imgSrc,
-  title,
-  date,
-}) => {
+export const MainBlogCard = ({ href, imgSrc, title, date }: BlogCardProps) => {
   return (
-    <li>
-      <a href={href}>
-        <div>
-          <img src={imgSrc} alt={title} />
+    <li className="col-span-full mb-6">
+      <a href={href} className="">
+        <div className="">
+          <img
+            src={imgSrc || "/placeholder.svg"}
+            alt={title}
+            className="w-full"
+          />
         </div>
-        <div>
-          <h2>{title}</h2>
-          <time dateTime={date}>{date}</time>
+        <div className="flex flex-col justify-center mt-2">
+          <h2 className="text-2xl md:text-4xl font-bold leading-normal">
+            {title}
+          </h2>
+          <div className="mt-2">
+            <time dateTime={date} className="text-muted-foreground opacity-60">
+              {date}
+            </time>
+          </div>
         </div>
       </a>
     </li>
   );
 };
-
-export default MainBlogCard;
