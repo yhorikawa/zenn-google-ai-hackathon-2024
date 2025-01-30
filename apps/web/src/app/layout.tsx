@@ -28,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`bg-rough-paper ${geistSans.variable} ${geistMono.variable}`}
+      >
         <div className="container mx-auto max-w-5xl mb-3">
           <div className="mx-4 lg:mx-8">{children}</div>
         </div>

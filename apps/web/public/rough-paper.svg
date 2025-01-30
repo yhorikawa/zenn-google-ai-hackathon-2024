@@ -1,0 +1,12 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+   <filter id="roughpaper">
+     <feTurbulence baseFrequency="0.03" numOctaves="6" stitchTiles="stitch" type="fractalNoise" result="noise"/>
+     <feDiffuseLighting in='noise' lighting-color='#F4F2EF' surfaceScale='1'>
+           <feDistantLight azimuth='45' elevation='70' />
+       </feDiffuseLighting>
+   </filter>
+ <rect
+   width='1024px'
+   height='1024px'
+   filter='url(#roughpaper)' />
+</svg>
