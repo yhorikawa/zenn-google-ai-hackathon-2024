@@ -1,10 +1,9 @@
-"use client";
-
 import { MainBlogCard } from "@/components/MainBlogCard/";
 import { SubBlogCard } from "@/components/SubBlogCard/";
-import { Button } from "@/components/base-ui/Button/";
+import { LoadMoreButton } from "@/components/base-ui/LoadMoreButton";
 import { Header } from "@/components/layouts/Header/";
 import type { Article } from "@/types/type";
+import type { NextPage } from "next";
 
 const articles: Article[] = [
   {
@@ -93,11 +92,7 @@ const articles: Article[] = [
   },
 ];
 
-const clickHandler = () => {
-  console.log("click handler");
-};
-
-const Page = async () => {
+const Page: NextPage = async () => {
   return (
     <>
       <Header />
@@ -124,7 +119,7 @@ const Page = async () => {
           )}
         </ul>
         <div className="text-center">
-          <Button onClick={clickHandler}>もっと見る</Button>
+          <LoadMoreButton />
         </div>
       </main>
     </>
