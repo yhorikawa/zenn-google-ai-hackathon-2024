@@ -6,13 +6,17 @@ services:
     command: sleep infinity
     network_mode: service:mongodb
   mongodb:
-    image: mongo:latest
+    build:
+      dockerfile: ./Dockerfile
     restart: unless-stopped
     volumes:
       - mongodb-data:/data/db
     environment:
-     MONGO_INITDB_ROOT_USERNAME: root
-     MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_REPLICA_HOST: 127.0.0.1
+      MONGO_REPLICA_PORT: 27017
+      MONGO_COMMAND: "mongo"
   mongo-express:
     image: mongo-express
     restart: always

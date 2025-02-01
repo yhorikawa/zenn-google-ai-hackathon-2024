@@ -20,6 +20,16 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "format": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false
     }
+
   }
 }
