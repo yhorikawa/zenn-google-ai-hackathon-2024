@@ -9,5 +9,9 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@google-cloud/discoveryengine": "^1.14.0",
+    "google-auth-library": "^9.15.1"
   }
 }
