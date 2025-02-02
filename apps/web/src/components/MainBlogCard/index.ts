@@ -1,0 +1,1 @@
+export { MainBlogCard } from "./MainBlogCard";
