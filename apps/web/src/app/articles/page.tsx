@@ -3,7 +3,6 @@ import { SubBlogCard } from "@/components/SubBlogCard/";
 import { LoadMoreButton } from "@/components/base-ui/LoadMoreButton";
 import { Header } from "@/components/layouts/Header/";
 import type { Article } from "@/types/type";
-import type { NextPage } from "next";
 
 const articles: Article[] = [
   {
@@ -92,7 +91,7 @@ const articles: Article[] = [
   },
 ];
 
-const Page: NextPage = async () => {
+const Page = async () => {
   return (
     <>
       <Header />
