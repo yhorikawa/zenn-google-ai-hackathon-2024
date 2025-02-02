@@ -1,13 +1,14 @@
 services:
   app:
-    image: mcr.microsoft.com/devcontainers/base:bullseye
+    build:
+      dockerfile: ./base/Dockerfile
     volumes:
       - ..:/workspace
     command: sleep infinity
     network_mode: service:mongodb
   mongodb:
     build:
-      dockerfile: ./Dockerfile
+      dockerfile: ./database/Dockerfile
     restart: unless-stopped
     volumes:
       - mongodb-data:/data/db
