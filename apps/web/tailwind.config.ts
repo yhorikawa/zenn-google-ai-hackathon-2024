@@ -12,6 +12,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          "var(--font-lusitana)", // 英語用
+          "var(--font-noto-serif-jp)", // 日本語用
+          "YuMincho",
+          "Hiragino Mincho ProN",
+          "HiraMinProN-W3",
+          "MS PMincho",
+          "serif",
+        ],
+      },
       opacity: {
         "8": ".08",
         "12": ".12",
