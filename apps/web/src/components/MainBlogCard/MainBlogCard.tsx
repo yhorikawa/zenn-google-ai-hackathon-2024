@@ -1,17 +1,22 @@
 type BlogCardProps = {
   href: string;
-  imgSrc: string;
+  thumbnail: string;
   title: string;
   date: string;
 };
 
-export const MainBlogCard = ({ href, imgSrc, title, date }: BlogCardProps) => {
+export const MainBlogCard = ({
+  href,
+  thumbnail,
+  title,
+  date,
+}: BlogCardProps) => {
   return (
     <li className="col-span-full mb-6">
       <a href={href} className="">
         <div className="">
           <img
-            src={imgSrc || "/placeholder.svg"}
+            src={thumbnail || "/placeholder.svg"}
             alt={title}
             className="w-full"
           />

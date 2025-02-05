@@ -1,17 +1,22 @@
 type BlogCardProps = {
   href: string;
-  imgSrc: string;
+  thumbnail: string;
   title: string;
   date: string;
 };
 
-export const SubBlogCard = ({ href, imgSrc, title, date }: BlogCardProps) => {
+export const SubBlogCard = ({
+  href,
+  thumbnail,
+  title,
+  date,
+}: BlogCardProps) => {
   return (
     <li className="break-inside-avoid border-t-2 border-gray-200 group">
       <a href={href} className="flex py-4">
         <div className="w-[100px] flex-shrink-0">
           <img
-            src={imgSrc || "/placeholder.svg"}
+            src={thumbnail ? `./${thumbnail}` : "/placeholder.svg"}
             alt={title}
             className="object-cover aspect-square"
             width={100}
