@@ -7,7 +7,13 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["**/.vercel/*", "**/.next/*", "**/env.d.ts", "**/*.json"]
+    "ignore": [
+      "**/.vercel/*",
+      "**/.next/*",
+      "**/env.d.ts",
+      "**/*.json",
+      "**/packages/database/generated/*"
+    ]
   },
   "formatter": {
     "enabled": true,
