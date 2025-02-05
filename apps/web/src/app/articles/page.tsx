@@ -2,96 +2,11 @@ import { MainBlogCard } from "@/components/MainBlogCard/";
 import { SubBlogCard } from "@/components/SubBlogCard/";
 import { LoadMoreButton } from "@/components/base-ui/LoadMoreButton";
 import { Header } from "@/components/layouts/Header/";
-import type { Article } from "@/types/type";
-
-const articles: Article[] = [
-  {
-    id: 1,
-    title:
-      "Sugoi Software、リリース直前に重大バグ発覚も迅速対応！来週のリリースは予定通り",
-    date: "2025-02-10",
-    imageUrl: "./sample.webp",
-  },
-  {
-    id: 2,
-    title:
-      "Sugoi Software、リリース直前に重大バグ発覚も迅速対応！来週のリリースは予定通り",
-    date: "2025-02-10",
-    imageUrl: "./sample.webp",
-  },
-  {
-    id: 3,
-    title:
-      "Sugoi Software、リリース直前に重大バグ発覚も迅速対応！来週のリリースは予定通り",
-    date: "2025-02-10",
-    imageUrl: "./sample.webp",
-  },
-  {
-    id: 4,
-    title:
-      "Sugoi Software、リリース直前に重大バグ発覚も迅速対応！来週のリリースは予定通り",
-    date: "2025-02-10",
-    imageUrl: "./sample.webp",
-  },
-  {
-    id: 5,
-    title:
-      "Sugoi Software、リリース直前に重大バグ発覚も迅速対応！来週のリリースは予定通り",
-    date: "2025-02-10",
-    imageUrl: "./sample.webp",
-  },
-  {
-    id: 6,
-    title:
-      "Sugoi Software、リリース直前に重大バグ発覚も迅速対応！来週のリリースは予定通り",
-    date: "2025-02-10",
-    imageUrl: "./sample.webp",
-  },
-  {
-    id: 7,
-    title:
-      "Sugoi Software、リリース直前に重大バグ発覚も迅速対応！来週のリリースは予定通り",
-    date: "2025-02-10",
-    imageUrl: "./sample.webp",
-  },
-  {
-    id: 8,
-    title:
-      "Sugoi Software、リリース直前に重大バグ発覚も迅速対応！来週のリリースは予定通り",
-    date: "2025-02-10",
-    imageUrl: "./sample.webp",
-  },
-  {
-    id: 9,
-    title:
-      "Sugoi Software、リリース直前に重大バグ発覚も迅速対応！来週のリリースは予定通り",
-    date: "2025-02-10",
-    imageUrl: "./sample.webp",
-  },
-  {
-    id: 10,
-    title:
-      "Sugoi Software、リリース直前に重大バグ発覚も迅速対応！来週のリリースは予定通り",
-    date: "2025-02-10",
-    imageUrl: "./sample.webp",
-  },
-  {
-    id: 11,
-    title:
-      "Sugoi Software、リリース直前に重大バグ発覚も迅速対応！来週のリリースは予定通り",
-    date: "2025-02-10",
-    imageUrl: "./sample.webp",
-  },
-  {
-    id: 12,
-    title:
-      "Sugoi Software、リリース直前に重大バグ発覚も迅速対応！来週のリリースは予定通り",
-    date: "2025-02-10",
-    imageUrl: "./sample.webp",
-  },
-];
+import { prisma } from "@repo/database";
 
 const Page = async () => {
+  const articles = await prisma.article.findMany();
+
   return (
     <>
       <Header />
@@ -101,16 +16,16 @@ const Page = async () => {
             index === 0 ? (
               <MainBlogCard
                 key={article.id}
-                href={`/articles/${article.id}`}
-                imgSrc={article.imageUrl}
+                href={`/articles/${article.date}`}
+                thumbnail={article.thumbnail ?? "/default-thumbnail.jpg"}
                 title={article.title}
                 date={article.date}
               />
             ) : (
               <SubBlogCard
                 key={article.id}
-                href={`/articles/${article.id}`}
-                imgSrc={article.imageUrl}
+                href={`/articles/${article.date}`}
+                thumbnail={article.thumbnail ?? "default-thumbnail.jpg"}
                 title={article.title}
                 date={article.date}
               />
