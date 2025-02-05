@@ -24,6 +24,9 @@
     "db:generate": {
       "cache": false
     },
+    "db:seed": {
+      "cache": false
+    },
     "format": {
       "cache": false
     },

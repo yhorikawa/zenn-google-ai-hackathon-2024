@@ -2315,6 +2315,7 @@ scheduler@^0.25.0:
   resolved "workspace:apps/scripts"
   devDependencies:
     "@repo/typescript-config" "*"
+  devDependencies:
     "@types/bun" "latest"
   dependencies:
     "@google-cloud/discoveryengine" "^1.14.0"

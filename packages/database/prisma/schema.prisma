@@ -33,8 +33,9 @@ model Content {
 }
 
 model Article {
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  title    String
-  date     String
-  contents Content[]
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  thumbnail String?
+  date      String
+  contents  Content[]
 }

@@ -8,7 +8,8 @@
   "scripts": {
     "db:generate": "prisma generate",
     "db:format": "prisma format",
-    "db:push": "prisma db push"
+    "db:push": "prisma db push",
+    "db:seed": "bun run prisma/seed.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",

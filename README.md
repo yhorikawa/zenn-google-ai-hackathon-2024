@@ -6,6 +6,8 @@
 bun install
 
 bun turbo db:generate
+
+bun turbo db:seed
 ```
 
 
