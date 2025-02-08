@@ -1,27 +1,31 @@
 import { FirstParagraph } from "@/components/FirstParagraph";
 import { TopicTitle } from "@/components/TopicTitle";
 import { Header } from "@/components/layouts/Header/";
+import { dateFormat } from "@/util/date";
 import { prisma } from "@repo/database";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import SampleImage from "public/sample.webp";
 
-export const Page = async () => {
-  const data = await prisma.article.findFirst({
+export const Page = async ({
+  params,
+}: { params: Promise<{ date: string }> }) => {
+  const { date } = await params;
+  const article = await prisma.article.findFirst({
     where: {
-      date: "1997-01-02",
+      date: new Date(date),
     },
   });
-  if (!data) notFound();
+  if (!article) notFound();
 
   return (
     <>
       <Header />
 
       <main className="grid gap-y-6 mx-12">
-        <p className="font-light text-sm">date: {data.date}</p>
+        <p className="font-light text-sm">date: {dateFormat(article.date)}</p>
         <div className="grid gap-y-12">
-          {data.contents.map(({ title, content, image }) => {
+          {article.contents.map(({ title, content, image }) => {
             return (
               <div className="grid gap-y-6" key={title}>
                 <TopicTitle title={title} />
