@@ -7,6 +7,7 @@ import {
   GoogleSearchClient,
   type SearchResponse,
 } from "../lib/agentBuilder.js";
+import { gemini } from "../lib/gemini.js";
 import type { ContentType } from "../types.js";
 
 const searchClient = new GoogleSearchClient({
@@ -44,7 +45,6 @@ ${additionalPrompt.join("\n")}
 `
     : SEARCH_PROMPT;
 
-  console.log(prompt);
   const searchResults: SearchResponse = await searchClient.search(prompt);
 
   // const answerResults: Result[] = searchResults.results.map((result) => ({
@@ -63,16 +63,14 @@ ${additionalPrompt.join("\n")}
     searchResults.session,
   );
 
-  const generatedTitle = await searchClient.getGeneratedAnswer(
-    prompt,
-    TITLE_PROMPT,
-    searchResults.queryId,
-    searchResults.session,
-  );
+  const generatedTitle = await gemini(`
+  ${TITLE_PROMPT}
+  ${generatedAnswer.answer.answerText}
+  `);
 
   const results = [
     {
-      title: generatedTitle.answer.answerText,
+      title: generatedTitle,
       content: generatedAnswer.answer.answerText,
     },
     ...contents,
