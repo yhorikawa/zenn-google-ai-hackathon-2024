@@ -1,8 +1,10 @@
 import {
   ANSWER_PROMPT,
+  IMAGE_PROMPT,
   SEARCH_PROMPT,
   TITLE_PROMPT,
 } from "../constants/prompt.js";
+import { getGenerateImage } from "../generate-image.js";
 import {
   GoogleSearchClient,
   type SearchResponse,
@@ -68,10 +70,21 @@ ${additionalPrompt.join("\n")}
   ${generatedAnswer.answer.answerText}
   `);
 
+  const translatedAnswer = await gemini(`
+  以下を翻訳して結果を全て英語だけにしてください。
+  日本語をいれないでください
+  ---
+  ${IMAGE_PROMPT}
+  ${generatedAnswer.answer.answerText}
+  `);
+
+  const generatedImageUrl = await getGenerateImage(translatedAnswer);
+
   const results = [
     {
       title: generatedTitle,
       content: generatedAnswer.answer.answerText,
+      image: generatedImageUrl,
     },
     ...contents,
   ];

@@ -10,11 +10,9 @@ import { getProjectTopix } from "./get-project-topix.js";
 import { insert } from "./insert.js";
 
 const main = async (args: { date: Date }) => {
-  const [projectTopix, adage, profile] = await Promise.all([
-    getProjectTopix(),
-    getAdage(),
-    getProfile(),
-  ]);
+  const projectTopix = await getProjectTopix();
+  const adage = await getAdage();
+  const profile = await getProfile();
   const editorial = await getEditorial(projectTopix);
   const convertedContent = convertContent(
     projectTopix,
