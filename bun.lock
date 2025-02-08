@@ -15,7 +15,10 @@
       "name": "scripts",
       "dependencies": {
         "@google-cloud/discoveryengine": "^1.14.0",
+        "@google-cloud/vertexai": "^1.9.3",
+        "@repo/database": "*",
         "google-auth-library": "^9.15.1",
+        "ts-pattern": "^5.6.2",
       },
       "devDependencies": {
         "@repo/typescript-config": "*",
@@ -170,6 +173,8 @@
     "@floating-ui/utils": ["@floating-ui/utils@0.2.9", "", {}, "sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg=="],
 
     "@google-cloud/discoveryengine": ["@google-cloud/discoveryengine@1.14.0", "", { "dependencies": { "google-gax": "^4.0.3" } }, "sha512-mwx/+Q3LpmyQbnIxhKNP3i8jgGyLm7NeyXJP11XwdbXOqvsOGrjsb6SOkNL2NzWVZFGtqP9K6jWz/9a0L1ZWYA=="],
+
+    "@google-cloud/vertexai": ["@google-cloud/vertexai@1.9.3", "", { "dependencies": { "google-auth-library": "^9.1.0" } }, "sha512-35o5tIEMLW3JeFJOaaMNR2e5sq+6rpnhrF97PuAxeOm0GlqVTESKhkGj7a5B5mmJSSSU3hUfIhcQCRRsw4Ipzg=="],
 
     "@grpc/grpc-js": ["@grpc/grpc-js@1.12.5", "", { "dependencies": { "@grpc/proto-loader": "^0.7.13", "@js-sdsl/ordered-map": "^4.4.2" } }, "sha512-d3iiHxdpg5+ZcJ6jnDSOT8Z0O0VMVGy34jAnYLUX8yd36b1qn8f1TwOA/Lc7TsOh03IkPJ38eGI5qD2EjNkoEA=="],
 
@@ -832,6 +837,8 @@
     "tr46": ["tr46@0.0.3", "", {}, "sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw=="],
 
     "ts-interface-checker": ["ts-interface-checker@0.1.13", "", {}, "sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA=="],
+
+    "ts-pattern": ["ts-pattern@5.6.2", "", {}, "sha512-d4IxJUXROL5NCa3amvMg6VQW2HVtZYmUTPfvVtO7zJWGYLJ+mry9v2OmYm+z67aniQoQ8/yFNadiEwtNS9qQiw=="],
 
     "tslib": ["tslib@2.8.1", "", {}, "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="],
 
