@@ -1,9 +1,12 @@
-import { ANSWER_PROMPT, SEARCH_PROMPT } from "../../constants/prompt.js";
+import {
+  ANSWER_PROMPT,
+  SEARCH_PROMPT,
+  TITLE_PROMPT,
+} from "../constants/prompt.js";
 import {
   GoogleSearchClient,
   type SearchResponse,
-} from "../../lib/agentBuilder.js";
-import type { ProjectTopixType } from "./projectTopix.js";
+} from "../lib/agentBuilder.js";
 
 const searchClient = new GoogleSearchClient({
   // biome-ignore lint/complexity/useLiteralKeys: .env
@@ -23,10 +26,21 @@ type Result = {
   snippet?: string;
 };
 
-export const fetch = async (): Promise<ProjectTopixType> => {
+export const fetch = async (...additionalPrompt: string[]) => {
   console.log("Project Topix");
-  const searchResults: SearchResponse =
-    await searchClient.search(SEARCH_PROMPT);
+
+  const prompt = additionalPrompt.length
+    ? `
+${SEARCH_PROMPT}
+- 過去に抽出内容と重複しないよう、新規性のある情報を中心にする
+
+【過去に抽出された事業トピックス】
+${additionalPrompt.join("\n")}
+`
+    : SEARCH_PROMPT;
+
+  console.log(prompt);
+  const searchResults: SearchResponse = await searchClient.search(prompt);
 
   const answerResults: Result[] = searchResults.results.map((result) => ({
     document: {
@@ -38,20 +52,28 @@ export const fetch = async (): Promise<ProjectTopixType> => {
   }));
 
   const generatedAnswer = await searchClient.getGeneratedAnswer(
-    SEARCH_PROMPT,
+    prompt,
     ANSWER_PROMPT,
     searchResults.queryId,
     searchResults.session,
   );
 
-  // const result = {
-  //   searchResults: answerResults,
-  //   generatedAnswer: generatedAnswer.answer.answerText,
-  // };
-  // console.log(result)
+  const generatedTitle = await searchClient.getGeneratedAnswer(
+    prompt,
+    TITLE_PROMPT,
+    searchResults.queryId,
+    searchResults.session,
+  );
+
+  const result = {
+    searchResults: answerResults,
+    generatedAnswer: generatedAnswer.answer.answerText,
+  };
+  console.log("------result ------");
+  console.log(result);
   return {
     // FIXME: 分けてfetchして返す
-    title: "title",
+    title: generatedTitle.answer.answerText,
     content: generatedAnswer.answer.answerText,
   };
 };
