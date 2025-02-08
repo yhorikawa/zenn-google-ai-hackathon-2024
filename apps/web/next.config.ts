@@ -12,7 +12,10 @@ const nextConfig: NextConfig = {
   outputFileTracingRoot: path.join(__dirname, "../../"),
   experimental: {
     serverActions: {
-      allowedOrigins: ["localhost:3001", "*"],
+      allowedOrigins: [
+        "localhost:3001",
+        "*", // 本当はorigin制限したほうがいい
+      ],
     },
   },
 };
