@@ -1,6 +1,6 @@
 import {
-  ANSWER_PROMPT,
-  SEARCH_PROMPT,
+  PROFILE_PROMPT,
+  PROFILE_SEARCH_PROMPT,
   TITLE_PROMPT,
 } from "../constants/prompt.js";
 import {
@@ -28,24 +28,12 @@ const searchClient = new GoogleSearchClient({
 //   snippet?: string;
 // };
 
-export const fetch = async (
-  times: number,
-  contents: ContentType[],
-  ...additionalPrompt: string[]
-): Promise<ContentType[]> => {
-  console.log("Project Topix");
+export const fetch = async (): Promise<ContentType[]> => {
+  console.log("Profile");
 
-  const prompt = additionalPrompt.length
-    ? `
-${SEARCH_PROMPT}
-- 過去に抽出内容と重複しないよう、新規性のある情報を中心にする
-
-【過去に抽出された事業トピックス】
-${additionalPrompt.join("\n")}
-`
-    : SEARCH_PROMPT;
-
-  const searchResults: SearchResponse = await searchClient.search(prompt);
+  const searchResults: SearchResponse = await searchClient.search(
+    PROFILE_SEARCH_PROMPT,
+  );
 
   // const answerResults: Result[] = searchResults.results.map((result) => ({
   //   document: {
@@ -57,8 +45,8 @@ ${additionalPrompt.join("\n")}
   // }));
 
   const generatedAnswer = await searchClient.getGeneratedAnswer(
-    prompt,
-    ANSWER_PROMPT,
+    PROFILE_SEARCH_PROMPT,
+    PROFILE_PROMPT,
     searchResults.queryId,
     searchResults.session,
   );
@@ -73,14 +61,7 @@ ${additionalPrompt.join("\n")}
       title: generatedTitle,
       content: generatedAnswer.answer.answerText,
     },
-    ...contents,
   ];
 
-  return times > 1
-    ? await fetch(
-        times - 1,
-        results,
-        results.map(({ content }) => content).join("\n"),
-      )
-    : results;
+  return results;
 };

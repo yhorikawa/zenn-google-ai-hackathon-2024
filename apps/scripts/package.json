@@ -11,8 +11,9 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@repo/database": "*",
     "@google-cloud/discoveryengine": "^1.14.0",
+    "@google-cloud/vertexai": "^1.9.3",
+    "@repo/database": "*",
     "google-auth-library": "^9.15.1",
     "ts-pattern": "^5.6.2"
   }
