@@ -27,7 +27,11 @@ const searchClient = new GoogleSearchClient({
 //   snippet?: string;
 // };
 
-export const fetch = async (times: number, contents: ContentType[], ...additionalPrompt: string[]): Promise<ContentType[]> => {
+export const fetch = async (
+  times: number,
+  contents: ContentType[],
+  ...additionalPrompt: string[]
+): Promise<ContentType[]> => {
   console.log("Project Topix");
 
   const prompt = additionalPrompt.length
@@ -66,15 +70,19 @@ ${additionalPrompt.join("\n")}
     searchResults.session,
   );
 
-  // const result = {
-  //   searchResults: answerResults,
-  //   generatedAnswer: generatedAnswer.answer.answerText,
-  // };
+  const results = [
+    {
+      title: generatedTitle.answer.answerText,
+      content: generatedAnswer.answer.answerText,
+    },
+    ...contents,
+  ];
 
-  const results = [{
-    title: generatedTitle.answer.answerText,
-    content: generatedAnswer.answer.answerText,
-  }, ...contents];
-
-  return times > 1 ? await fetch(times - 1, results, results.map(({content}) => content).join('\n')) : results
+  return times > 1
+    ? await fetch(
+        times - 1,
+        results,
+        results.map(({ content }) => content).join("\n"),
+      )
+    : results;
 };
