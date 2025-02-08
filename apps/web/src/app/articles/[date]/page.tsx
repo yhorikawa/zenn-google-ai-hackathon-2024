@@ -6,9 +6,7 @@ import { prisma } from "@repo/database";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export const Page = async ({
-  params,
-}: { params: Promise<{ date: string }> }) => {
+const Page = async ({ params }: { params: Promise<{ date: string }> }) => {
   const { date } = await params;
   const article = await prisma.article.findFirst({
     where: {
