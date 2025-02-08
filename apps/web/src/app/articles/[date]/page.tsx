@@ -1,6 +1,10 @@
+import { FirstParagraph } from "@/components/FirstParagraph";
+import { TopicTitle } from "@/components/TopicTitle";
 import { Header } from "@/components/layouts/Header/";
 import { prisma } from "@repo/database";
+import Image from "next/image";
 import { notFound } from "next/navigation";
+import SampleImage from "public/sample.webp";
 
 export const Page = async () => {
   const data = await prisma.article.findFirst({
@@ -15,20 +19,23 @@ export const Page = async () => {
       <Header />
 
       <main className="grid gap-y-6 mx-12">
-        <h1 className="font-bold text-2xl">title: {data.title}</h1>
         <p className="font-light text-sm">date: {data.date}</p>
-        {data.contents.map(({ title, content, image }) => {
-          return (
-            <div
-              className="shadow-lg bg-white p-4 grid gap-y-4 rounded"
-              key={title}
-            >
-              <h2 className="font-bold text-xl">title:{title}</h2>
-              <p>content:{content}</p>
-              <p>image url:{image ? image : "なし"}</p>
-            </div>
-          );
-        })}
+        <div className="grid gap-y-12">
+          {data.contents.map(({ title, content, image }) => {
+            return (
+              <div className="grid gap-y-6" key={title}>
+                <TopicTitle title={title} />
+                <Image
+                  src={image || SampleImage}
+                  alt={title || "画像"}
+                  height="448"
+                  width="896"
+                />
+                <FirstParagraph text={content} />
+              </div>
+            );
+          })}
+        </div>
       </main>
     </>
   );
