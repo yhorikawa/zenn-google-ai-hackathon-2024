@@ -2,7 +2,7 @@ import { prisma } from "../src/index.js";
 
 const articlesData = {
   title: "新聞のタイトルがここに入りますよ",
-  date: "1984-01-04",
+  date: new Date("1984-01-04"),
   contents: [
     {
       title: "B市出店計画、競合出現で緊急対応 \n",
