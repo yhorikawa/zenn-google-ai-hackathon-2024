@@ -1,5 +1,5 @@
 import { client } from "@/lib/client";
-import { Button } from "flowbite-react";
+import Link from "next/link";
 import { SITE_TITLE } from "../constants/site";
 
 const Page = async () => {
@@ -16,7 +16,9 @@ const Page = async () => {
         </h1>
         <p>{data}</p>
       </div>
-      <Button>Click me</Button>
+      <Link href="/articles/" className="px-2 py-1 bg-cyan-600 shadow">
+        Click me
+      </Link>
     </>
   );
 };
