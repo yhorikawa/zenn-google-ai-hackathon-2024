@@ -1,6 +1,6 @@
 import { EDITORIAL_PROMPT, TITLE_PROMPT } from "./constants/prompt.js";
 import { gemini } from "./lib/gemini.js";
-import { parse } from "./ parse.js";
+import { parse } from "./parse.js";
 import type { ContentType } from "./types.js";
 
 export const getEditorial = async (

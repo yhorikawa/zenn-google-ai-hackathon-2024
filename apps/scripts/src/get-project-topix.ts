@@ -1,5 +1,5 @@
 import { fetch } from "./fetch/fetch-project-topix.js";
-import { parse } from "./ parse.js";
+import { parse } from "./parse.js";
 import type { ContentType } from "./types.js";
 
 const TIMES = 3;
