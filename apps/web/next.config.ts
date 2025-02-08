@@ -10,6 +10,13 @@ const nextConfig: NextConfig = {
   transpilePackages: [],
   output: "standalone",
   outputFileTracingRoot: path.join(__dirname, "../../"),
+  experimental: {
+    serverActions: {
+      allowedOrigins: [
+        "*", // 本当はorigin制限する必要がある
+      ],
+    },
+  },
 };
 
 export default nextConfig;
