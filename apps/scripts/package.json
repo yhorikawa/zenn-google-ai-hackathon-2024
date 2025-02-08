@@ -15,6 +15,7 @@
     "@google-cloud/vertexai": "^1.9.3",
     "@repo/database": "*",
     "google-auth-library": "^9.15.1",
-    "ts-pattern": "^5.6.2"
+    "ts-pattern": "^5.6.2",
+    "zod": "^3.24.1"
   }
 }
