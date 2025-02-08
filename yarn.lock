@@ -244,6 +244,13 @@
   dependencies:
     google-gax "^4.0.3"
 
+"@google-cloud/vertexai@^1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npmjs.org/@google-cloud/vertexai/-/vertexai-1.9.3.tgz"
+  integrity sha512-35o5tIEMLW3JeFJOaaMNR2e5sq+6rpnhrF97PuAxeOm0GlqVTESKhkGj7a5B5mmJSSSU3hUfIhcQCRRsw4Ipzg==
+  dependencies:
+    google-auth-library "^9.1.0"
+
 "@grpc/grpc-js@^1.10.9":
   version "1.12.5"
   resolved "https://registry.npmjs.org/@grpc/grpc-js/-/grpc-js-1.12.5.tgz"
@@ -1562,7 +1569,7 @@ glob-parent@^6.0.2:
   dependencies:
     is-glob "^4.0.3"
 
-google-auth-library@^9.15.1, google-auth-library@^9.3.0:
+google-auth-library@^9.1.0, google-auth-library@^9.15.1, google-auth-library@^9.3.0:
   version "9.15.1"
   resolved "https://registry.npmjs.org/google-auth-library/-/google-auth-library-9.15.1.tgz"
   integrity sha512-Jb6Z0+nvECVz+2lzSMt9u98UsoakXxA2HGHMCxh+so3n90XgYWkq5dur19JAJV7ONiJY22yBTyJB1TSkvPq9Ng==
@@ -2318,6 +2325,7 @@ scheduler@^0.25.0:
     "@types/bun" "latest"
   dependencies:
     "@google-cloud/discoveryengine" "^1.14.0"
+    "@google-cloud/vertexai" "^1.9.3"
     "@repo/database" "*"
     google-auth-library "^9.15.1"
     ts-pattern "^5.6.2"
