@@ -9,6 +9,7 @@ type LoadMoreButtonProps = {
 
 export const LoadMoreButton = ({
   onClick,
+  // @ts-ignore
   disabled = false, // TODO: 実装する
 }: LoadMoreButtonProps) => {
   return <Button onClick={onClick}>もっと見る</Button>;

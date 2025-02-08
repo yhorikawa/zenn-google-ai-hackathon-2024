@@ -7,9 +7,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import SampleImage from "public/sample.webp";
 
-export const Page = async ({
-  params,
-}: { params: Promise<{ date: string }> }) => {
+const Page = async ({ params }: { params: Promise<{ date: string }> }) => {
   const { date } = await params;
   const article = await prisma.article.findFirst({
     where: {
