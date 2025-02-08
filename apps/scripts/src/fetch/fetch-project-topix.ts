@@ -71,7 +71,8 @@ ${additionalPrompt.join("\n")}
   `);
 
   const translatedAnswer = await gemini(`
-  以下を翻訳して結果を全て英語だけにしてください
+  以下を翻訳して結果を全て英語だけにしてください。
+  日本語をいれないでください
   ---
   ${IMAGE_PROMPT}
   ${generatedAnswer.answer.answerText}
