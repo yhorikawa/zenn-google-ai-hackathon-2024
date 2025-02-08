@@ -12,6 +12,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      leading: {
+        loose: "1.8",
+      },
       opacity: {
         "8": ".08",
         "12": ".12",
