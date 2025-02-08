@@ -7,6 +7,7 @@ import {
   GoogleSearchClient,
   type SearchResponse,
 } from "../lib/agentBuilder.js";
+import type { ContentType } from "../types.js";
 
 const searchClient = new GoogleSearchClient({
   // biome-ignore lint/complexity/useLiteralKeys: .env
@@ -19,14 +20,18 @@ const searchClient = new GoogleSearchClient({
   engineId: Bun.env["AGENT_BUILDER_ENGINE_ID"] || "",
 });
 
-type Result = {
-  document: {
-    id: string;
-  };
-  snippet?: string;
-};
+// type Result = {
+//   document: {
+//     id: string;
+//   };
+//   snippet?: string;
+// };
 
-export const fetch = async (...additionalPrompt: string[]) => {
+export const fetch = async (
+  times: number,
+  contents: ContentType[],
+  ...additionalPrompt: string[]
+): Promise<ContentType[]> => {
   console.log("Project Topix");
 
   const prompt = additionalPrompt.length
@@ -42,14 +47,14 @@ ${additionalPrompt.join("\n")}
   console.log(prompt);
   const searchResults: SearchResponse = await searchClient.search(prompt);
 
-  const answerResults: Result[] = searchResults.results.map((result) => ({
-    document: {
-      id: result.document.id,
-    },
-    snippet: result.document.derivedStructData.snippets[0]
-      ? result.document.derivedStructData.snippets[0].snippet
-      : "No Snippppet Available",
-  }));
+  // const answerResults: Result[] = searchResults.results.map((result) => ({
+  //   document: {
+  //     id: result.document.id,
+  //   },
+  //   snippet: result.document.derivedStructData.snippets[0]
+  //     ? result.document.derivedStructData.snippets[0].snippet
+  //     : "No Snippppet Available",
+  // }));
 
   const generatedAnswer = await searchClient.getGeneratedAnswer(
     prompt,
@@ -65,15 +70,19 @@ ${additionalPrompt.join("\n")}
     searchResults.session,
   );
 
-  const result = {
-    searchResults: answerResults,
-    generatedAnswer: generatedAnswer.answer.answerText,
-  };
-  console.log("------result ------");
-  console.log(result);
-  return {
-    // FIXME: 分けてfetchして返す
-    title: generatedTitle.answer.answerText,
-    content: generatedAnswer.answer.answerText,
-  };
+  const results = [
+    {
+      title: generatedTitle.answer.answerText,
+      content: generatedAnswer.answer.answerText,
+    },
+    ...contents,
+  ];
+
+  return times > 1
+    ? await fetch(
+        times - 1,
+        results,
+        results.map(({ content }) => content).join("\n"),
+      )
+    : results;
 };
