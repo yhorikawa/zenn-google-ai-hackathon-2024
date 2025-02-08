@@ -5,7 +5,6 @@ import { dateFormat } from "@/util/date";
 import { prisma } from "@repo/database";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import SampleImage from "public/sample.webp";
 
 export const Page = async ({
   params,
@@ -29,12 +28,14 @@ export const Page = async ({
             return (
               <div className="grid gap-y-6" key={title}>
                 <TopicTitle title={title} />
-                <Image
-                  src={image || SampleImage}
-                  alt={title || "画像"}
-                  height="448"
-                  width="896"
-                />
+                {image && (
+                  <Image
+                    src={image}
+                    alt={title || "画像"}
+                    height="448"
+                    width="896"
+                  />
+                )}
                 <FirstParagraph text={content} />
               </div>
             );
