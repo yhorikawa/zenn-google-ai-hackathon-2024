@@ -1,5 +1,7 @@
 import { match } from "ts-pattern";
-import { projectTopix } from "./lib/project-topix/index.js";
+import { convertContent } from "./covert-content.js";
+import { getProjectTopix } from "./get-project-topix.js";
+import { insert } from "./insert.js";
 
 type ContentType = string | undefined;
 
@@ -8,9 +10,12 @@ type ContentType = string | undefined;
 const main = async () => {
   const contentType: ContentType = Bun.argv[2];
   match(contentType)
-    .with("project-topix", projectTopix)
-    .otherwise(() => {
-      projectTopix();
+    .with("project-topix", getProjectTopix)
+    .otherwise(async () => {
+      const projectTopix = await getProjectTopix();
+      const projectTopix2 = await getProjectTopix();
+      const convertedContent = convertContent(projectTopix, ...projectTopix2);
+      insert(convertedContent);
     });
 };
 
