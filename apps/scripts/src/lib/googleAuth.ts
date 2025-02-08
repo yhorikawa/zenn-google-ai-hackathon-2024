@@ -11,9 +11,9 @@ export async function getGoogleAuthToken(): Promise<string> {
         // biome-ignore lint/complexity/useLiteralKeys: <explanation>
         keyFile: Bun.env["GCLOUD_FILE"] || "",
         // biome-ignore lint/complexity/useLiteralKeys: <explanation>
-        credentials: Bun.env["GOOGLE_CREDENTIALS"]
+        credentials: Bun.env["GOOGLE_APPLICATION_CREDENTIALS"]
           ? // biome-ignore lint/complexity/useLiteralKeys: <explanation>
-            JSON.parse(Bun.env["GOOGLE_CREDENTIALS"])
+            JSON.parse(Bun.env["GOOGLE_APPLICATION_CREDENTIALS"])
           : undefined,
       });
     }
