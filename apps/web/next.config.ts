@@ -13,7 +13,8 @@ const nextConfig: NextConfig = {
   experimental: {
     serverActions: {
       allowedOrigins: [
-        "*", // 本当はorigin制限する必要がある
+        "localhost:3001",
+        "*", // 本当はorigin制限したほうがいい
       ],
     },
   },

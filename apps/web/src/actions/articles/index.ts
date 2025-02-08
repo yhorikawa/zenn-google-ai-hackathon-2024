@@ -12,7 +12,13 @@ export async function getArticlesWithoutContents(cursor?: string) {
   if (cursor != null) {
     // 普通にquery['cursor'] = { id: cursor } とすると、型エラーで色々めんどくさかったのでこうする
     // queryに、findManyのargの型を付けたら解決するが、ジェネリクスな型を使っているためどうやら難しそう
-    query = Object.assign(query, { cursor: { id: cursor } });
+    query = Object.assign(query, {
+      cursor: { id: cursor },
+      where: {
+        id: { not: cursor }, // cursorのデータも取得するので、取ってこないようにする
+      },
+    });
   }
-  return prisma.article.findMany(query);
+  const articles = await prisma.article.findMany(query);
+  return articles;
 }
