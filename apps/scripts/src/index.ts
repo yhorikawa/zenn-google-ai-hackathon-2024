@@ -1,3 +1,6 @@
+import { parseArgs } from "node:util";
+import { z } from "zod";
+
 import { convertContent } from "./covert-content.js";
 import { generateTitle } from "./generate-title.js";
 import { getAdage } from "./get-adage.js";
@@ -6,7 +9,7 @@ import { getProfile } from "./get-profile.js";
 import { getProjectTopix } from "./get-project-topix.js";
 import { insert } from "./insert.js";
 
-const main = async () => {
+const main = async (args: { date: Date }) => {
   const [projectTopix, adage, profile] = await Promise.all([
     getProjectTopix(),
     getAdage(),
@@ -21,7 +24,30 @@ const main = async () => {
   );
   const title = await generateTitle(convertedContent);
 
-  insert(title, convertedContent);
+  insert(title, convertedContent, args.date);
 };
 
-main();
+const getArguments = () => {
+  const { values } = parseArgs({
+    args: Bun.argv,
+    options: {
+      date: {
+        type: "string",
+      },
+    },
+    strict: true,
+    allowPositionals: true,
+  });
+  return validateArguments(values);
+};
+
+const validateArguments = (values: {
+  date?: string;
+}) => {
+  const argsSchema = z.object({
+    date: z.date().default(new Date()),
+  });
+  return argsSchema.parse(values);
+};
+
+main(getArguments());
