@@ -36,9 +36,9 @@ const articlesData = {
       links: [],
     },
     {
-      title: "データは未来を映す鏡 \n",
+      title: "今週の格言",
       content: "過去のデータは未来の指針。 \n",
-      image: "",
+      image: "/api/v1/images?text=データは未来を映す鏡じゃ",
       links: [],
     },
     {
