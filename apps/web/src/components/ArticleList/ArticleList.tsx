@@ -42,7 +42,7 @@ export const ArticleList = ({
           index === 0 ? (
             <MainBlogCard
               key={article.id}
-              href={`/articles/${article.id}}`}
+              href={`/articles/${article.id}`}
               imgSrc={"./sample.webp"}
               title={article.title}
               date={article.date}

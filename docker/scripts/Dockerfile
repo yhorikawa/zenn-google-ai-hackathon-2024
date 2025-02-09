@@ -31,8 +31,9 @@ RUN bun turbo db:generate
 FROM bun-alpine AS runner
 ENV NODE_ENV=production
 
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/apps/scripts/src/ ./src
+COPY --from=builder --chown=bun:bun /app/packages/ ./packages
+COPY --from=builder --chown=bun:bun /app/node_modules ./node_modules
+COPY --from=builder --chown=bun:bun /app/apps/scripts/src/ ./src
 
 USER bun
 CMD ["bun", "run", "src/index.ts"]
