@@ -1,2 +1,2 @@
-export { prisma } from "./client.ts";
+export { prisma } from "./client.js";
 export * from "../generated/client/index.js";
