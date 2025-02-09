@@ -1043,18 +1043,18 @@ body-parser@1.20.3, body-parser@^1.20.2:
   resolved "https://registry.npmjs.org/body-parser/-/body-parser-1.20.3.tgz"
   integrity sha512-7rAxByjUMqQ3/bHJy7D6OGXvx/MMc4IqBn/X0fcM1QUcAItpZrBEYhWGem+tzXH90c+G01ypMcYJBO9Y30203g==
   dependencies:
-    qs "6.13.0"
-    depd "2.0.0"
     bytes "3.1.2"
-    debug "2.6.9"
-    unpipe "1.0.0"
-    destroy "1.2.0"
-    type-is "~1.6.18"
-    raw-body "2.5.2"
-    iconv-lite "0.4.24"
-    http-errors "2.0.0"
-    on-finished "2.4.1"
     content-type "~1.0.5"
+    debug "2.6.9"
+    depd "2.0.0"
+    destroy "1.2.0"
+    http-errors "2.0.0"
+    iconv-lite "0.4.24"
+    on-finished "2.4.1"
+    qs "6.13.0"
+    raw-body "2.5.2"
+    type-is "~1.6.18"
+    unpipe "1.0.0"
 
 brace-expansion@^2.0.1:
   version "2.0.1"
@@ -1264,13 +1264,13 @@ compression@^1.7.4:
   resolved "https://registry.npmjs.org/compression/-/compression-1.7.5.tgz"
   integrity sha512-bQJ0YRck5ak3LgtnpKkiabX5pNF7tMUh1BSy2ZBOTh0Dim0BUu6aPPwByIns6/A5Prh8PufSPerMDUklpzes2Q==
   dependencies:
-    vary "~1.1.2"
     bytes "3.1.2"
+    compressible "~2.0.18"
     debug "2.6.9"
     negotiator "~0.6.4"
     on-headers "~1.0.2"
     safe-buffer "5.2.1"
-    compressible "~2.0.18"
+    vary "~1.1.2"
 
 connect-redis@^7.1.1:
   version "7.1.1"
@@ -1340,8 +1340,8 @@ cors@~2.8.5:
   resolved "https://registry.npmjs.org/cors/-/cors-2.8.5.tgz"
   integrity sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==
   dependencies:
-    vary "^1"
     object-assign "^4"
+    vary "^1"
 
 cross-spawn@^7.0.0, cross-spawn@^7.0.3:
   version "7.0.6"
@@ -1657,51 +1657,51 @@ express@^4.18.3:
   resolved "https://registry.npmjs.org/express/-/express-4.21.2.tgz"
   integrity sha512-28HqgMZAmih1Czt9ny7qr6ek2qddF4FclbMzwhCREB6OFfH+rXAnuNCwo1/wFvrtbgsQDb4kSbX9de9lFbrXnA==
   dependencies:
-    qs "6.13.0"
-    depd "2.0.0"
-    etag "~1.8.1"
-    send "0.19.0"
-    vary "~1.1.2"
-    debug "2.6.9"
-    fresh "0.5.2"
-    cookie "0.7.1"
     accepts "~1.3.8"
-    methods "~1.1.2"
-    type-is "~1.6.18"
-    parseurl "~1.3.3"
-    statuses "2.0.1"
-    encodeurl "~2.0.0"
-    proxy-addr "~2.0.7"
-    body-parser "1.20.3"
-    escape-html "~1.0.3"
-    http-errors "2.0.0"
-    on-finished "2.4.1"
-    safe-buffer "5.2.1"
-    utils-merge "1.0.1"
-    content-type "~1.0.4"
-    finalhandler "1.3.1"
-    range-parser "~1.2.1"
-    serve-static "1.16.2"
     array-flatten "1.1.1"
-    path-to-regexp "0.1.12"
-    setprototypeof "1.2.0"
-    cookie-signature "1.0.6"
-    merge-descriptors "1.0.3"
+    body-parser "1.20.3"
     content-disposition "0.5.4"
+    content-type "~1.0.4"
+    cookie "0.7.1"
+    cookie-signature "1.0.6"
+    debug "2.6.9"
+    depd "2.0.0"
+    encodeurl "~2.0.0"
+    escape-html "~1.0.3"
+    etag "~1.8.1"
+    finalhandler "1.3.1"
+    fresh "0.5.2"
+    http-errors "2.0.0"
+    merge-descriptors "1.0.3"
+    methods "~1.1.2"
+    on-finished "2.4.1"
+    parseurl "~1.3.3"
+    path-to-regexp "0.1.12"
+    proxy-addr "~2.0.7"
+    qs "6.13.0"
+    range-parser "~1.2.1"
+    safe-buffer "5.2.1"
+    send "0.19.0"
+    serve-static "1.16.2"
+    setprototypeof "1.2.0"
+    statuses "2.0.1"
+    type-is "~1.6.18"
+    utils-merge "1.0.1"
+    vary "~1.1.2"
 
 express-session@>=1, express-session@^1.18.0:
   version "1.18.1"
   resolved "https://registry.npmjs.org/express-session/-/express-session-1.18.1.tgz"
   integrity sha512-a5mtTqEaZvBCL9A9aqkrtfz+3SMDhOVUnjafjo+s7A9Txkq+SVX2DLvSp1Zrv4uCXa3lMSK3viWnh9Gg07PBUA==
   dependencies:
-    depd "~2.0.0"
-    debug "2.6.9"
     cookie "0.7.2"
-    parseurl "~1.3.3"
-    uid-safe "~2.1.5"
-    on-headers "~1.0.2"
-    safe-buffer "5.2.1"
     cookie-signature "1.0.7"
+    debug "2.6.9"
+    depd "~2.0.0"
+    on-headers "~1.0.2"
+    parseurl "~1.3.3"
+    safe-buffer "5.2.1"
+    uid-safe "~2.1.5"
 
 extend@^3.0.2:
   version "3.0.2"
@@ -1746,12 +1746,12 @@ finalhandler@1.3.1:
   integrity sha512-6BN9trH7bp3qvnrRyzsBz+g3lZxTNZTbVO2EV1CS0WIcDbawYVdYvGflME/9QP0h0pYlCDBCTjYa9nZzMDpyxQ==
   dependencies:
     debug "2.6.9"
-    unpipe "~1.0.0"
-    parseurl "~1.3.3"
-    statuses "2.0.1"
     encodeurl "~2.0.0"
     escape-html "~1.0.3"
     on-finished "2.4.1"
+    parseurl "~1.3.3"
+    statuses "2.0.1"
+    unpipe "~1.0.0"
 
 flowbite@2.5.1:
   version "2.5.1"
@@ -1820,10 +1820,10 @@ formidable@^2.0.1:
   resolved "https://registry.npmjs.org/formidable/-/formidable-2.1.2.tgz"
   integrity sha512-CM3GuJ57US06mlpQ47YcunuUZ9jpm8Vx+P2CGt2j7HpgkKZO/DJYQ0Bobim8G6PFQmK5lOqOOdUXboU+h73A4g==
   dependencies:
-    qs "^6.11.0"
-    once "^1.4.0"
-    hexoid "^1.0.0"
     dezalgo "^1.0.4"
+    hexoid "^1.0.0"
+    once "^1.4.0"
+    qs "^6.11.0"
 
 forwarded@0.2.0:
   version "0.2.0"
@@ -1856,13 +1856,13 @@ gauge@^5.0.0:
   integrity sha512-pMaFftXPtiGIHCJHdcUUx9Rby/rFT/Kkt3fIIGCs+9PMDIljSyRiqraTlxNtBReJRDfUefpa263RQ3vnp5G/LQ==
   dependencies:
     aproba "^1.0.3 || ^2.0.0"
-    strip-ansi "^6.0.1"
-    wide-align "^1.1.5"
+    color-support "^1.1.3"
+    console-control-strings "^1.1.0"
     has-unicode "^2.0.1"
     signal-exit "^4.0.1"
     string-width "^4.2.3"
-    color-support "^1.1.3"
-    console-control-strings "^1.1.0"
+    strip-ansi "^6.0.1"
+    wide-align "^1.1.5"
 
 gaxios@^6.0.0, gaxios@^6.0.2, gaxios@^6.1.1:
   version "6.7.1"
@@ -2001,13 +2001,13 @@ handlebars@4.7.7:
   version "4.7.7"
   resolved "https://registry.npmjs.org/handlebars/-/handlebars-4.7.7.tgz"
   integrity sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==
+  optionalDependencies:
+    uglify-js "^3.1.4"
   dependencies:
     minimist "^1.2.5"
     neo-async "^2.6.0"
     source-map "^0.6.1"
     wordwrap "^1.0.0"
-  optionalDependencies:
-    uglify-js "^3.1.4"
 
 has-symbols@^1.0.3, has-symbols@^1.1.0:
   version "1.1.0"
@@ -2038,8 +2038,8 @@ hbs@^4.2.0:
   resolved "https://registry.npmjs.org/hbs/-/hbs-4.2.0.tgz"
   integrity sha512-dQwHnrfWlTk5PvG9+a45GYpg0VpX47ryKF8dULVd6DtwOE6TEcYQXQ5QM6nyOx/h7v3bvEQbdn19EDAcfUAgZg==
   dependencies:
-    walk "2.3.15"
     handlebars "4.7.7"
+    walk "2.3.15"
 
 helmet@^7.1.0:
   version "7.2.0"
@@ -2050,11 +2050,6 @@ hexoid@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/hexoid/-/hexoid-1.0.0.tgz"
   integrity sha512-QFLV0taWQOZtvIRIAdBChesmogZrtuXvVWsFHZTk2SU+anspqZ2vMnoLg7IE1+Uk16N19APic1BuF8bC8c2m5g==
-
-hono@^4.6.16:
-  version "4.7.0"
-  resolved "https://registry.npmjs.org/hono/-/hono-4.7.0.tgz"
-  integrity sha512-hV97aIR4WYbG30k234sD9B3VNr1ZWdQRmrVF76LKFlmI7O9Yo70mG9+mFwyQ6Sjrz4wH71GfnBxv6CPjcx3QNw==
 
 html-entities@^2.5.2:
   version "2.5.2"
@@ -2437,10 +2432,10 @@ method-override@^3.0.0:
   resolved "https://registry.npmjs.org/method-override/-/method-override-3.0.0.tgz"
   integrity sha512-IJ2NNN/mSl9w3kzWB92rcdHpz+HjkxhDJWNDBqSlas+zQdP8wBiJzITPg08M/k2uVvMow7Sk41atndNtt/PHSA==
   dependencies:
-    vary "~1.1.2"
     debug "3.1.0"
     methods "~1.1.2"
     parseurl "~1.3.2"
+    vary "~1.1.2"
 
 methods@~1.1.2:
   version "1.1.2"
@@ -2610,10 +2605,10 @@ npmlog@^7.0.1:
   resolved "https://registry.npmjs.org/npmlog/-/npmlog-7.0.1.tgz"
   integrity sha512-uJ0YFk/mCQpLBt+bxN88AKd+gyqZvZDbtiNxk6Waqcj2aPRyfVx8ITawkyQynxUagInjdYT1+qj4NfA5KJJUxg==
   dependencies:
-    gauge "^5.0.0"
-    set-blocking "^2.0.0"
     are-we-there-yet "^4.0.0"
     console-control-strings "^1.1.0"
+    gauge "^5.0.0"
+    set-blocking "^2.0.0"
 
 object-assign@^4, object-assign@^4.0.1, object-assign@^4.1.1:
   version "4.1.1"
@@ -2985,9 +2980,9 @@ raw-body@2.5.2:
   integrity sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==
   dependencies:
     bytes "3.1.2"
-    unpipe "1.0.0"
-    iconv-lite "0.4.24"
     http-errors "2.0.0"
+    iconv-lite "0.4.24"
+    unpipe "1.0.0"
 
 react@*, "react@>= 16.8.0 || 17.x.x || ^18.0.0-0 || ^19.0.0-0", react@>=16.8.0, react@>=18, "react@^16.11.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react@^18 || ^19 || ^19.0.0-rc", "react@^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0", react@^19.0.0:
   version "19.0.0"
@@ -3192,28 +3187,28 @@ send@0.19.0:
   resolved "https://registry.npmjs.org/send/-/send-0.19.0.tgz"
   integrity sha512-dW41u5VfLXu8SJh5bwRmyYUbAoSB3c9uQh6L8h/KtsFREPWpbX1lrljJo186Jc4nmci/sGUZ9a0a0J2zgfq2hw==
   dependencies:
-    ms "2.1.3"
-    depd "2.0.0"
-    etag "~1.8.1"
-    mime "1.6.0"
     debug "2.6.9"
-    fresh "0.5.2"
+    depd "2.0.0"
     destroy "1.2.0"
-    statuses "2.0.1"
     encodeurl "~1.0.2"
     escape-html "~1.0.3"
+    etag "~1.8.1"
+    fresh "0.5.2"
     http-errors "2.0.0"
+    mime "1.6.0"
+    ms "2.1.3"
     on-finished "2.4.1"
     range-parser "~1.2.1"
+    statuses "2.0.1"
 
 serve-favicon@^2.5.0:
   version "2.5.0"
   resolved "https://registry.npmjs.org/serve-favicon/-/serve-favicon-2.5.0.tgz"
   integrity sha512-FMW2RvqNr03x+C0WxTyu6sOv21oOjkq5j8tjquWccwa6ScNyGFOGJVpuS1NmTVGBAHS07xnSKotgf2ehQmf9iA==
   dependencies:
-    ms "2.1.1"
     etag "~1.8.1"
     fresh "0.5.2"
+    ms "2.1.1"
     parseurl "~1.3.2"
     safe-buffer "5.1.1"
 
@@ -3222,13 +3217,13 @@ serve-index@^1.9.1:
   resolved "https://registry.npmjs.org/serve-index/-/serve-index-1.9.1.tgz"
   integrity sha512-pXHfKNP4qujrtteMrSBb0rc8HJ9Ms/GrXwcUtUtD5s4ewDJI8bT3Cz2zTVRMKtri49pLx2e0Ya8ziP5Ya2pZZw==
   dependencies:
+    accepts "~1.3.4"
     batch "0.6.1"
     debug "2.6.9"
-    accepts "~1.3.4"
-    parseurl "~1.3.2"
-    mime-types "~2.1.17"
     escape-html "~1.0.3"
     http-errors "~1.6.2"
+    mime-types "~2.1.17"
+    parseurl "~1.3.2"
 
 serve-static@1.16.2:
   version "1.16.2"
@@ -3245,28 +3240,28 @@ server@*:
   resolved "https://registry.npmjs.org/server/-/server-1.0.41.tgz"
   integrity sha512-KZ+fAkiU6BJlhmz949jd6NLPrypR6uxADtWmfnI+jcNhjn5aO8Eiexbd/qB++Vcs6RZww4yYydY/RQad43IGgA==
   dependencies:
-    mz "^2.7.0"
-    hbs "^4.2.0"
-    pug "^3.0.2"
-    csurf "^1.11.0"
-    dotenv "^16.4.5"
-    extend "^3.0.2"
-    helmet "^7.1.0"
-    npmlog "^7.0.1"
-    express "^4.18.3"
-    ioredis "^5.3.2"
-    loadware "^2.0.0"
-    socket.io "^4.7.4"
     body-parser "^1.20.2"
     compression "^1.7.4"
-    serve-index "^1.9.1"
     connect-redis "^7.1.1"
     cookie-parser "^1.4.6"
+    csurf "^1.11.0"
+    dotenv "^16.4.5"
+    express "^4.18.3"
+    express-session "^1.18.0"
+    extend "^3.0.2"
+    hbs "^4.2.0"
+    helmet "^7.1.0"
+    ioredis "^5.3.2"
+    loadware "^2.0.0"
+    method-override "^3.0.0"
+    mz "^2.7.0"
+    npmlog "^7.0.1"
+    path-to-regexp "^6.2.1"
+    pug "^3.0.2"
     response-time "^2.3.2"
     serve-favicon "^2.5.0"
-    path-to-regexp "^6.2.1"
-    express-session "^1.18.0"
-    method-override "^3.0.0"
+    serve-index "^1.9.1"
+    socket.io "^4.7.4"
     upload-files-express "^0.4.0"
 
 set-blocking@^2.0.0:
@@ -3403,13 +3398,13 @@ socket.io@^4.7.4:
   resolved "https://registry.npmjs.org/socket.io/-/socket.io-4.8.1.tgz"
   integrity sha512-oZ7iUCxph8WYRHHcjBEc9unw3adt5CmSNlppj/5Q4k2RIrhl8Z5yY2Xr4j9zj0+wzVZ0bxmYoGSzKJnRl6A4yg==
   dependencies:
-    cors "~2.8.5"
-    debug "~4.3.2"
     accepts "~1.3.4"
     base64id "~2.0.0"
+    cors "~2.8.5"
+    debug "~4.3.2"
     engine.io "~6.6.0"
-    socket.io-parser "~4.2.4"
     socket.io-adapter "~2.5.2"
+    socket.io-parser "~4.2.4"
 
 socket.io-adapter@~2.5.2:
   version "2.5.5"
@@ -3424,8 +3419,8 @@ socket.io-parser@~4.2.4:
   resolved "https://registry.npmjs.org/socket.io-parser/-/socket.io-parser-4.2.4.tgz"
   integrity sha512-/GbIKmo8ioc+NIWIhwdecY0ge+qVBSMdgxGygevmdHj24bsfgtCmcUUcQ5ZzcylGFHsN3k4HB4Cgkl96KVnuew==
   dependencies:
-    debug "~4.3.1"
     "@socket.io/component-emitter" "~3.1.0"
+    debug "~4.3.1"
 
 source-map@^0.6.1:
   version "0.6.1"
@@ -3732,8 +3727,8 @@ type-is@~1.6.18:
   resolved "https://registry.npmjs.org/type-is/-/type-is-1.6.18.tgz"
   integrity sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==
   dependencies:
-    mime-types "~2.1.24"
     media-typer "0.3.0"
+    mime-types "~2.1.24"
 
 typescript@5.5.4, typescript@>=5.1.0, typescript@^5.0.0:
   version "5.5.4"
@@ -3834,7 +3829,6 @@ walk@2.3.15:
     autoprefixer "^10.4.20"
     flowbite "^2.5.2"
     flowbite-react "^0.10.2"
-    hono "^4.6.16"
     next "^15.1.0"
     postcss "^8.4.49"
     react "^19.0.0"
