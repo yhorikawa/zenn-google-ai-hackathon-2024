@@ -13,6 +13,7 @@
 	"dependencies": {
 		"@repo/database": "*",
 		"autoprefixer": "^10.4.20",
+		"date-fns": "^4.1.0",
 		"flowbite": "^2.5.2",
 		"flowbite-react": "^0.10.2",
 		"next": "^15.1.0",
