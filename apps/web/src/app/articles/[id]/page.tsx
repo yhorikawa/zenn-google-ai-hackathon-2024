@@ -6,8 +6,8 @@ import { prisma } from "@repo/database";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export const Page = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
   const article = await prisma.article.findFirst({
     where: {
       id,

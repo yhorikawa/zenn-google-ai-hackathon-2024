@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { lusitana, notoSerifJP } from "./fonts/fonts";
 import "./globals.css";
 import type { ReactNode } from "react";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../constants/site";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -29,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`bg-rough-paper ${geistSans.variable} ${geistMono.variable}`}
+        className={`bg-rough-paper ${lusitana.variable} ${notoSerifJP.variable}`}
       >
         <div className="container mx-auto max-w-5xl mb-3">
           <div className="mx-4 lg:mx-8">{children}</div>
