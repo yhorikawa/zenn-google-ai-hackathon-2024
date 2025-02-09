@@ -93,4 +93,5 @@ const config: Config = {
   },
   plugins: [flowbite.plugin()],
 };
+
 export default config;
