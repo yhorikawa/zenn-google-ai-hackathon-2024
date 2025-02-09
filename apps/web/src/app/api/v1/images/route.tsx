@@ -4,8 +4,6 @@ import type { NextRequest } from "next/server";
 import { z } from "zod";
 import getImage from "./_components/Image";
 
-export const runtime = "edge";
-
 const textSchema = z.string();
 
 async function validateInputData(text: string) {
