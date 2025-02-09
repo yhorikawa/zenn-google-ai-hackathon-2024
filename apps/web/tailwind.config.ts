@@ -22,6 +22,7 @@ const config: Config = {
           "MS PMincho",
           "serif",
         ],
+      },
       leading: {
         loose: "1.8",
       },
