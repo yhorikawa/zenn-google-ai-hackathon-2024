@@ -4,7 +4,7 @@ import { prisma } from "@repo/database";
 
 const MAX_COUNT_ARTICLES = 10;
 
-export async function getArticlesWithoutContents(cursor?: string) {
+export const getArticlesWithoutContents = async (cursor?: string) => {
   let query = {
     take: MAX_COUNT_ARTICLES,
     omit: { contents: true },
@@ -21,4 +21,4 @@ export async function getArticlesWithoutContents(cursor?: string) {
   }
   const articles = await prisma.article.findMany(query);
   return articles;
-}
+};

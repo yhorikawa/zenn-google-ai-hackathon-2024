@@ -8,7 +8,7 @@ export const runtime = "edge";
 
 const textSchema = z.string();
 
-export async function validateInputData(text: string) {
+async function validateInputData(text: string) {
   return textSchema.safeParse(text);
 }
 

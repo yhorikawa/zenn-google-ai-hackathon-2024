@@ -1,3 +1,18 @@
+@import url("https://fonts.google.com/specimen/Lusitana");
+@import url("https://fonts.google.com/noto/specimen/Noto+Serif+JP");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Lusitana";
+  src: var(--font-lusitana);
+  size-adjust: 107%;
+}
+
+body {
+  @apply font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -6,9 +6,20 @@ import {
 } from "ai";
 
 export const getGenerateImage = async (prompt: string) => {
+  // biome-ignore lint/complexity/useLiteralKeys: .env
+  const appCredentials = Bun.env["GOOGLE_APPLICATION_CREDENTIALS"]
+    ? // biome-ignore lint/complexity/useLiteralKeys: <explanation>
+      JSON.parse(Bun.env["GOOGLE_APPLICATION_CREDENTIALS"])
+    : undefined;
   const vertex = createVertex({
     project: "sodium-platform-447711-n6",
     location: "us-central1",
+    googleAuthOptions: {
+      credentials: {
+        client_email: appCredentials.client_email,
+        private_key: appCredentials.private_key,
+      },
+    },
   });
   const { image } = await generateImage({
     model: vertex.image("imagen-3.0-generate-002"),
@@ -27,7 +38,14 @@ export const getGenerateImage = async (prompt: string) => {
 };
 
 const uploadImage = async (image: GeneratedImage) => {
-  const storage = new Storage();
+  // biome-ignore lint/complexity/useLiteralKeys: <explanation>
+  const appCredentials = Bun.env["GOOGLE_APPLICATION_CREDENTIALS"]
+    ? // biome-ignore lint/complexity/useLiteralKeys: .env
+      JSON.parse(Bun.env["GOOGLE_APPLICATION_CREDENTIALS"])
+    : undefined;
+  const storage = new Storage({
+    credentials: appCredentials,
+  });
   const bucketName = "zenn-ai-hackathon-2024-web-assets";
   const bucket = storage.bucket(bucketName);
   const uuid = crypto.randomUUID();
