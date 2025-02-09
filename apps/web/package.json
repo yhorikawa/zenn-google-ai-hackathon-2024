@@ -15,7 +15,6 @@
 		"autoprefixer": "^10.4.20",
 		"flowbite": "^2.5.2",
 		"flowbite-react": "^0.10.2",
-		"hono": "^4.6.16",
 		"next": "^15.1.0",
 		"postcss": "^8.4.49",
 		"react": "^19.0.0",
