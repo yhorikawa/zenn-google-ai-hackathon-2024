@@ -17,60 +17,39 @@ async function DefaultImage({
   const element = (
     <div
       style={{
-        backgroundColor: "#0ff",
-        backgroundSize: "100% 100%",
+        position: "relative",
+        backgroundImage: "url('/proverb-bg.png')",
         height: "100%",
         width: "100%",
         display: "flex",
-        textAlign: "left",
         alignItems: "center",
         justifyContent: "center",
+        aspectRatio: "16/9",
+        backgroundSize: "cover",
       }}
     >
-      <div
+      <p
         style={{
-          backgroundColor: "#fff",
-          backgroundSize: "100% 100%",
-          height: "90%",
-          width: "95%",
-          display: "flex",
-          textAlign: "left",
-          alignItems: "flex-start",
-          justifyContent: "center",
-          flexDirection: "column",
-          flexWrap: "nowrap",
+          position: "absolute",
+          top: "20%",
+          fontSize: "40px",
+          fontWeight: "bold",
         }}
       >
-        <div
-          style={{
-            width: "100%",
-            fontSize: 60,
-            fontStyle: "normal",
-            fontWeight: "bold",
-            color: "#000",
-            padding: "0 120px",
-            lineHeight: 1.3,
-            borderRadius: "15px",
-            marginBottom: "30px",
-            wordWrap: "break-word",
-          }}
-        >
-          {text}
-        </div>
-        <div
-          style={{
-            width: "100%",
-            fontSize: 40,
-            fontStyle: "normal",
-            fontWeight: "bold",
-            color: "#000",
-            padding: "0 120px",
-            lineHeight: 1.3,
-          }}
-        >
-          おじさんがいました
-        </div>
-      </div>
+        今週の格言
+      </p>
+      <p
+        style={{
+          position: "absolute",
+          top: "43%",
+          width: "70%",
+          wordWrap: "break-word",
+          fontSize: "48px",
+          textAlign: "center",
+        }}
+      >
+        {text}
+      </p>
     </div>
   );
 
