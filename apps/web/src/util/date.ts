@@ -1,7 +1,7 @@
-export function dateFormat(date: Date) {
-  return date.toDateString();
-}
+import { format } from "date-fns";
 
-export function dateFormatYYYYMMDD(date: Date) {
-  return date.toISOString().split("T")[0];
+export function dateFormatFull(date: Date | string) {
+  const d = typeof date === "string" ? new Date(date) : date;
+  const formatted = format(d, "EEEE, MMMM d, yyyy");
+  return formatted.toUpperCase();
 }
