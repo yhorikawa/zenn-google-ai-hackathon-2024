@@ -3,6 +3,8 @@ import { ArticleList } from "@/components/ArticleList";
 import { Header } from "@/components/layouts/Header";
 import { prisma } from "@repo/database";
 
+export const dynamic = "force-dynamic";
+
 const Page = async () => {
   const articlesCount = await prisma.article.count();
   const initialArticles = await getArticlesWithoutContents();
