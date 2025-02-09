@@ -1,12 +1,15 @@
 import NextLink, { type LinkProps as NextLinkProps } from "next/link";
-import type React from "react";
+import type { PropsWithChildren } from "react";
 
 interface LinkProps extends NextLinkProps {
-  children: React.ReactNode;
   className?: string;
 }
 
-export const Link = ({ children, className, ...props }: LinkProps) => {
+export const Link = ({
+  children,
+  className,
+  ...props
+}: PropsWithChildren<LinkProps>) => {
   return (
     <NextLink {...props} className={className}>
       {children}
