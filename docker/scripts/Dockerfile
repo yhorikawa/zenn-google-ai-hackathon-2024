@@ -24,6 +24,7 @@ ARG BUN_PKG_MANAGER
 COPY --from=pruned /app/out/full/ .
 RUN bunx json -I -f package.json -e ${BUN_PKG_MANAGER}
 RUN bun install
+RUN bun turbo db:generate
 
 # ================== RELEASE ======================
 

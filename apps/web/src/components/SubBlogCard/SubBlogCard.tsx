@@ -1,8 +1,10 @@
+import { dateFormat } from "@/util/date";
+
 type BlogCardProps = {
   href: string;
   imgSrc: string;
   title: string;
-  date: string;
+  date: Date;
 };
 
 export const SubBlogCard = ({ href, imgSrc, title, date }: BlogCardProps) => {
@@ -22,8 +24,11 @@ export const SubBlogCard = ({ href, imgSrc, title, date }: BlogCardProps) => {
           <h2 className="text-lg font-bold mb-2 line-clamp-3 group-hover:text-primary transition-colors">
             {title}
           </h2>
-          <time dateTime={date} className="text-muted-foreground text-sm">
-            {date}
+          <time
+            dateTime={dateFormat(date)}
+            className="text-muted-foreground text-sm"
+          >
+            {dateFormat(date)}
           </time>
         </div>
       </a>

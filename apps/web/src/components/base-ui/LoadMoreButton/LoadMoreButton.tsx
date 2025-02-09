@@ -2,10 +2,15 @@
 
 import { Button } from "@/components/base-ui/Button/";
 
-export const LoadMoreButton = () => {
-  const clickHandler = () => {
-    console.log("click handler");
-  };
+type LoadMoreButtonProps = {
+  onClick: () => void;
+  disabled: boolean;
+};
 
-  return <Button onClick={clickHandler}>もっと見る</Button>;
+export const LoadMoreButton = ({
+  onClick,
+  // @ts-ignore
+  disabled = false, // TODO: 実装する
+}: LoadMoreButtonProps) => {
+  return <Button onClick={onClick}>もっと見る</Button>;
 };

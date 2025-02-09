@@ -1,12 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
-  output = "../generated/client"
+  output   = "../generated/client"
 }
 
 datasource db {
@@ -14,27 +8,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// schema.prisma
-model Url {
-  id        String  @id @default(auto()) @map("_id") @db.ObjectId
-  url       String
-  content   Content @relation(fields: [contentId], references: [id])
-  contentId String  @db.ObjectId
-}
-
-model Content {
-  id        String  @id @default(auto()) @map("_id") @db.ObjectId
-  title     String?
-  content   String
-  image     String
-  links     Url[]
-  article   Article @relation(fields: [articleId], references: [id])
-  articleId String  @db.ObjectId
+type Content {
+  title   String?
+  content String
+  image   String
+  links   String[]
 }
 
 model Article {
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
   title    String
-  date     String
+  date     DateTime
   contents Content[]
 }

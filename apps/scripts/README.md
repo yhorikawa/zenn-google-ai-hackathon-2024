@@ -9,6 +9,7 @@ bun install
 To run:
 
 ```bash
+gcloud auth application-default login
 bun run index.ts
 ```
 
