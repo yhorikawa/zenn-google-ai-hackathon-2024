@@ -1,5 +1,6 @@
 import { FirstParagraph } from "@/components/FirstParagraph";
 import { TopicTitle } from "@/components/TopicTitle";
+import { Footer } from "@/components/layouts/Footer";
 import { Header } from "@/components/layouts/Header/";
 import { dateFormat } from "@/util/date";
 import { prisma } from "@repo/database";
@@ -40,6 +41,8 @@ export const Page = async ({ params }: { params: { id: string } }) => {
           })}
         </div>
       </main>
+
+      <Footer />
     </>
   );
 };

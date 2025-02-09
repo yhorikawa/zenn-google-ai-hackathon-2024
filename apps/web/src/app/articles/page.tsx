@@ -1,5 +1,6 @@
 import { getArticlesWithoutContents } from "@/actions/articles";
 import { ArticleList } from "@/components/ArticleList";
+import { Footer } from "@/components/layouts/Footer";
 import { Header } from "@/components/layouts/Header";
 import { prisma } from "@repo/database";
 
@@ -10,12 +11,15 @@ const Page = async () => {
   return (
     <>
       <Header />
+
       <main className="container mx-auto px-4 py-8">
         <ArticleList
           initialArticles={initialArticles}
           articlesCount={articlesCount}
         />
       </main>
+
+      <Footer />
     </>
   );
 };
