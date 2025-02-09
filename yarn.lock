@@ -1381,6 +1381,11 @@ csurf@^1.11.0:
     csrf "3.1.0"
     http-errors "~1.7.3"
 
+date-fns@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.npmjs.org/date-fns/-/date-fns-4.1.0.tgz"
+  integrity sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==
+
 debounce@2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/debounce/-/debounce-2.1.0.tgz"
@@ -3827,6 +3832,7 @@ walk@2.3.15:
   dependencies:
     "@repo/database" "*"
     autoprefixer "^10.4.20"
+    date-fns "^4.1.0"
     flowbite "^2.5.2"
     flowbite-react "^0.10.2"
     next "^15.1.0"
@@ -3835,6 +3841,7 @@ walk@2.3.15:
     react-dom "^19.0.0"
     react-icons "^5.4.0"
     tailwindcss "^3.4.17"
+    zod "^3.24.1"
 
 webidl-conversions@^3.0.0:
   version "3.0.1"

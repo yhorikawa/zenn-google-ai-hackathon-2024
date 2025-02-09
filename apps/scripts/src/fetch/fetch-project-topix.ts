@@ -40,7 +40,7 @@ export const fetch = async (
   const prompt = additionalPrompt.length
     ? `
 ${SEARCH_PROMPT}
-- 過去に抽出内容と重複しないよう、新規性のある情報を中心にする
+- 過去に抽出された内容が含まれないようにするため、情報を取得した際に必ず「過去に抽出されたトピックス」を参照し、その内容が含まれていないことを確認してください
 
 【過去に抽出された事業トピックス】
 ${additionalPrompt.join("\n")}
@@ -71,9 +71,6 @@ ${additionalPrompt.join("\n")}
   `);
 
   const translatedAnswer = await gemini(`
-  以下を翻訳して結果を全て英語だけにしてください。
-  日本語をいれないでください
-  ---
   ${IMAGE_PROMPT}
   ${generatedAnswer.answer.answerText}
   `);
