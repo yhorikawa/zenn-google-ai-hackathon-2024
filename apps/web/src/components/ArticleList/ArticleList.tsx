@@ -4,7 +4,6 @@ import { getArticlesWithoutContents } from "@/actions/articles";
 import { MainBlogCard } from "@/components/MainBlogCard";
 import { SubBlogCard } from "@/components/SubBlogCard";
 import { LoadMoreButton } from "@/components/base-ui/LoadMoreButton";
-import { dateFormatYYYYMMDD } from "@/util/date";
 import type { Article } from "@repo/database";
 import { useState } from "react";
 
@@ -43,7 +42,7 @@ export const ArticleList = ({
           index === 0 ? (
             <MainBlogCard
               key={article.id}
-              href={`/articles/${dateFormatYYYYMMDD(article.date)}`}
+              href={`/articles/${article.id}}`}
               imgSrc={"./sample.webp"}
               title={article.title}
               date={article.date}
@@ -51,7 +50,7 @@ export const ArticleList = ({
           ) : (
             <SubBlogCard
               key={article.id}
-              href={`/articles/${dateFormatYYYYMMDD(article.date)}`}
+              href={`/articles/${article.id}`}
               imgSrc={"./sample.webp"}
               title={article.title}
               date={article.date}

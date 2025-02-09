@@ -6,11 +6,11 @@ import { prisma } from "@repo/database";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-const Page = async ({ params }: { params: Promise<{ date: string }> }) => {
-  const { date } = await params;
+export const Page = async ({ params }: { params: { id: string } }) => {
+  const { id } = params;
   const article = await prisma.article.findFirst({
     where: {
-      date: new Date(date),
+      id,
     },
   });
   if (!article) notFound();
