@@ -26,7 +26,7 @@ export const SubBlogCard = ({ href, imgSrc, title, date }: BlogCardProps) => {
           </h2>
           <time
             dateTime={dateFormatShort(date)}
-            className="text-muted-foreground text-sm"
+            className="text-muted-foreground text-sm opacity-60"
           >
             {dateFormatShort(date)}
           </time>
