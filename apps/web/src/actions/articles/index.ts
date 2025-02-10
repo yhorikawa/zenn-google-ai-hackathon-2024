@@ -7,7 +7,6 @@ const MAX_COUNT_ARTICLES = 10;
 export const getArticlesWithoutContents = async (cursor?: string) => {
   let query = {
     take: MAX_COUNT_ARTICLES,
-    omit: { contents: true },
   };
   if (cursor != null) {
     // 普通にquery['cursor'] = { id: cursor } とすると、型エラーで色々めんどくさかったのでこうする
