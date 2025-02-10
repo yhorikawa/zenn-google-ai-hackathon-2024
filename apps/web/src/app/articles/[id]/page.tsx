@@ -4,6 +4,7 @@ import { dateFormatFull } from "@/util/date";
 import { prisma } from "@repo/database";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { NextAndPrevArticleLink } from "./_components/NextAndPrevLink/NextAndPrevLink";
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
@@ -35,6 +36,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
           );
         })}
       </div>
+      <NextAndPrevArticleLink date={article.date} />
     </main>
   );
 };
