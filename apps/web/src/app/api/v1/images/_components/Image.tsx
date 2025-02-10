@@ -18,21 +18,28 @@ async function DefaultImage({
     <div
       style={{
         position: "relative",
-        backgroundImage:
-          "url('https://storage.googleapis.com/zenn-ai-hackathon-2024-web-assets/images/proverb-bg.png')",
-        height: "100%",
         width: "100%",
+        height: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundSize: "cover",
       }}
     >
+      <img
+        src="https://storage.googleapis.com/zenn-ai-hackathon-2024-web-assets/images/proverb-bg.png"
+        alt={text}
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      />
       <p
         style={{
           position: "absolute",
-          top: "20%",
-          fontSize: "40px",
+          top: "14%",
+          fontSize: "60px",
           fontWeight: "bold",
         }}
       >
