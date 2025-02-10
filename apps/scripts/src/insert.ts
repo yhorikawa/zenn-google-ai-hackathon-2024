@@ -10,7 +10,7 @@ export const insert = async (
   try {
     await prisma.article.create({
       data: {
-        title,
+        title: title.replace(/#|\*/g, ""),
         date,
         contents: contents.map((item) => {
           return {

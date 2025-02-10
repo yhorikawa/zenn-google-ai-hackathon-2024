@@ -28,12 +28,16 @@ export const ANSWER_PROMPT = `
  - 余計な記号や特殊文字を含めず、自然な新聞記事の形式で書く
 `;
 
-export const IMAGE_PROMPT = `
+export const TRANSLATE_PROMPT = `
  主要な意味を保持しつつ、英訳は簡潔に15字程度（約10単語以内）に要約してください。
  出力は1文のみとし、ピリオド以外の記号や特殊文字を含めず、1行で出力してください。
  - 日本語の要約や解説は一切含めないこと
 
  【文章】
+`;
+
+export const IMAGE_PROMPT = `
+Create an image that depicts "ここに英訳された文章が入る" The style should be monochrome and retro. There should be no text in the image.
 `;
 
 export const TITLE_PROMPT = `

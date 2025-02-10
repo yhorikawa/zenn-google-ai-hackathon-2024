@@ -58,7 +58,7 @@ export const fetch = async (): Promise<ContentType[]> => {
   const results = [
     {
       title: "今週の格言",
-      content: generatedAnswer.answer.answerText,
+      content: "",
       image: `/api/v1/images?text=${generatedTitle.trimEnd()}`,
     },
   ];

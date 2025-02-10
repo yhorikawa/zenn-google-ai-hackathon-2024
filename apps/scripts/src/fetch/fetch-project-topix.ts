@@ -1,8 +1,8 @@
 import {
   ANSWER_PROMPT,
-  IMAGE_PROMPT,
   SEARCH_PROMPT,
   TITLE_PROMPT,
+  TRANSLATE_PROMPT,
 } from "../constants/prompt.js";
 import { getGenerateImage } from "../generate-image.js";
 import {
@@ -71,11 +71,13 @@ ${additionalPrompt.join("\n")}
   `);
 
   const translatedAnswer = await gemini(`
-  ${IMAGE_PROMPT}
+  ${TRANSLATE_PROMPT}
   ${generatedAnswer.answer.answerText}
   `);
 
-  const generatedImageUrl = await getGenerateImage(translatedAnswer);
+  const generatedImageUrl = await getGenerateImage(`
+  Create an image that depicts  ${translatedAnswer} The style should be monochrome and retro. There should be no text in the image.
+  `);
 
   const results = [
     {
