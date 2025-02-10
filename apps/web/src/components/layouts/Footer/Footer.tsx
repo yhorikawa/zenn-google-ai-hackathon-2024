@@ -3,7 +3,7 @@ import { SITE_TITLE } from "@/constants/site";
 
 export const Footer = () => {
   return (
-    <footer className="grid grid-cols-[1fr_auto_1fr] items-center py-2 border-t-2 border-gray-200 container mx-auto px-4 lg:px-16 mt-6">
+    <footer className="grid grid-cols-[1fr_auto_1fr] items-center py-2 border-t-2 outline-variant container mx-auto px-4 lg:px-16 mt-6">
       <div className="col-start-1">
         <Link
           href="/articles"

@@ -19,7 +19,7 @@ export const NextAndPrevArticleLink = async ({ date }: { date: Date }) => {
   });
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between gap-9">
       {nextLink ? (
         <Link
           className="p-3 border rounded-sm border-outline-variant flex gap-x-1"

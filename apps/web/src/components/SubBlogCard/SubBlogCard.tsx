@@ -9,7 +9,7 @@ type BlogCardProps = {
 
 export const SubBlogCard = ({ href, imgSrc, title, date }: BlogCardProps) => {
   return (
-    <li className="break-inside-avoid border-t-2 border-gray-200 group">
+    <li className="break-inside-avoid border-t-2 outline-variant group">
       <a href={href} className="flex py-4">
         <div className="w-[100px] flex-shrink-0">
           <img
@@ -21,7 +21,7 @@ export const SubBlogCard = ({ href, imgSrc, title, date }: BlogCardProps) => {
           />
         </div>
         <div className="pl-4">
-          <h2 className="text-lg font-bold mb-2 line-clamp-3 group-hover:text-primary transition-colors">
+          <h2 className="text-base lg:text-lg font-bold mb-2 line-clamp-3 group-hover:text-primary transition-colors">
             {title}
           </h2>
           <time
