@@ -45,9 +45,7 @@ export default function Page(): ReactElement {
           ))}
         </div>
       </div>
-
-      {/* /articlesに遷移するリンクを追加してください */}
-      <Link href="/articles" className="underline block text-center mt-12">
+      <Link href="/articles/" className="underline block text-center mt-12">
         新聞紙一覧へ
       </Link>
 
