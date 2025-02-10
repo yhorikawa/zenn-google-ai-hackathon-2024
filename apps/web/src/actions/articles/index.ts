@@ -20,5 +20,5 @@ export const getArticlesWithoutContents = async (cursor?: string) => {
     });
   }
   const articles = await prisma.article.findMany(query);
-  return articles;
+  return articles.reverse();
 };
