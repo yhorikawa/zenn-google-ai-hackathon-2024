@@ -88,6 +88,7 @@ const config: Config = {
       },
       backgroundImage: {
         "rough-paper": "url('/rough-paper.svg')",
+        "poverb-bg": "url('/proverb-bg.png')",
       },
     },
   },
