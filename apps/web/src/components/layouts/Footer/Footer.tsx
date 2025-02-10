@@ -1,4 +1,5 @@
 import { Link } from "@/components/base-ui/Link/Link";
+import { SITE_TITLE } from "@/constants/site";
 
 export const Footer = () => {
   return (
@@ -12,7 +13,7 @@ export const Footer = () => {
         </Link>
       </div>
       <div className="text-xs md:text-sm col-start-2 justify-self-center">
-        <span>©SugoiService</span>
+        <span>{SITE_TITLE}</span>
       </div>
     </footer>
   );

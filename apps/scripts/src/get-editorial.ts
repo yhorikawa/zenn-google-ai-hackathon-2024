@@ -11,5 +11,5 @@ export const getEditorial = async (
   ${EDITORIAL_PROMPT}
   ${contents.map(({ content }) => content).join("\n")}
   `);
-  return parse([{ title: "AI編集長宮﨑による辛口レビュー", content }]);
+  return parse([{ title: "AI編集長による社説", content }]);
 };
