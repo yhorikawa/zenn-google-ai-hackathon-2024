@@ -18,13 +18,13 @@ async function DefaultImage({
     <div
       style={{
         position: "relative",
-        backgroundImage: "url('/proverb-bg.png')",
+        backgroundImage:
+          "url('https://storage.googleapis.com/zenn-ai-hackathon-2024-web-assets/images/proverb-bg.png')",
         height: "100%",
         width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        aspectRatio: "16/9",
         backgroundSize: "cover",
       }}
     >
