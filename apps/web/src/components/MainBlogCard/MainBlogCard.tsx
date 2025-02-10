@@ -1,4 +1,4 @@
-import { dateFormatFull } from "@/util/date";
+import { dateFormatShort } from "@/util/date";
 
 type BlogCardProps = {
   href: string;
@@ -24,10 +24,10 @@ export const MainBlogCard = ({ href, imgSrc, title, date }: BlogCardProps) => {
           </h2>
           <div className="mt-2">
             <time
-              dateTime={dateFormatFull(date)}
+              dateTime={dateFormatShort(date)}
               className="text-muted-foreground opacity-60"
             >
-              {dateFormatFull(date)}
+              {dateFormatShort(date)}
             </time>
           </div>
         </div>

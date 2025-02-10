@@ -37,7 +37,7 @@ export const ArticleList = ({
 
   return (
     <>
-      <ul className="grid grid-cols-1 md:grid-cols-2 column-x-4">
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 px-4 pb-4 lg:px-16">
         {articles.map((article, index) =>
           index === 0 ? (
             <MainBlogCard
