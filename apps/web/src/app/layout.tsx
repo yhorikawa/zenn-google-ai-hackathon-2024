@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     default: SITE_TITLE,
   },
   description: SITE_DESCRIPTION,
+  robots: {
+    index: false,
+  },
 };
 
 export default function RootLayout({
