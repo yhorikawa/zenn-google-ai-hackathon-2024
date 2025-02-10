@@ -8,7 +8,7 @@ import type { Article } from "@repo/database";
 import { useState } from "react";
 
 interface ArticlesListProps {
-  initialArticles: Omit<Article, "contents">[];
+  initialArticles: Article[];
   articlesCount: number;
 }
 
@@ -43,7 +43,7 @@ export const ArticleList = ({
             <MainBlogCard
               key={article.id}
               href={`/articles/${article.id}`}
-              imgSrc={"./sample.webp"}
+              imgSrc={`${article.contents[0]?.image}` || "./sample.webp"}
               title={article.title}
               date={article.date}
             />
@@ -51,7 +51,7 @@ export const ArticleList = ({
             <SubBlogCard
               key={article.id}
               href={`/articles/${article.id}`}
-              imgSrc={"./sample.webp"}
+              imgSrc={`${article.contents[0]?.image}` || "./sample.webp"}
               title={article.title}
               date={article.date}
             />
