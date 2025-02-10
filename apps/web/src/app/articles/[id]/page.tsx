@@ -16,8 +16,10 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   if (!article) notFound();
 
   return (
-    <main className="grid gap-y-6 mx-12">
-      <p className="font-light text-sm">{dateFormatFull(article.date)}</p>
+    <main className="grid gap-y-6 px-4 pb-4 lg:px-16 lg:pb-16 justify-items-center">
+      <p className="font-light text-sm mt-6 text-center">
+        {dateFormatFull(article.date)}
+      </p>
       <div className="grid gap-y-12">
         {article.contents.map(({ title, content, image }) => {
           return (
@@ -27,6 +29,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
                 <Image
                   src={image || "/placeholder.svg"}
                   alt={title || "画像"}
+                  className="w-full"
                   height="448"
                   width="896"
                 />

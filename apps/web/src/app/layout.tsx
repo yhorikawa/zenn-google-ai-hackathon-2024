@@ -20,10 +20,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`bg-rough-paper ${lusitana.variable} ${notoSerifJP.variable}`}
+        className={`bg-rough-paper text-on-surface ${lusitana.variable} ${notoSerifJP.variable}`}
       >
-        <div className="container mx-auto max-w-5xl mb-3">
-          <div className="mx-4 lg:mx-8">{children}</div>
+        <div className="container mx-auto md:max-w-screen-md lg:max-w-screen-lg">
+          {children}
         </div>
       </body>
     </html>
