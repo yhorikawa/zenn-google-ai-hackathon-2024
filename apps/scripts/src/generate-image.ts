@@ -13,7 +13,7 @@ export const getGenerateImage = async (prompt: string) => {
     : undefined;
   const vertex = createVertex({
     project: "sodium-platform-447711-n6",
-    location: "us-central1",
+    location: "asia-northeast1",
     googleAuthOptions: {
       credentials: {
         client_email: appCredentials.client_email,
