@@ -16,7 +16,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <main className="grid gap-y-6 mx-12">
-      <p className="font-light text-sm">date: {dateFormatFull(article.date)}</p>
+      <p className="font-light text-sm">{dateFormatFull(article.date)}</p>
       <div className="grid gap-y-12">
         {article.contents.map(({ title, content, image }) => {
           return (
